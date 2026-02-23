@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+
+	<body data-sveltekit-preload-data="hover">
+		<div class="header">
+			<div class="header_item">
+				<div class="credits">
+					<span>Mattéo Lambert</span>
+					<span>Portfolio</span>
+				</div>
+			</div>
+			<div class="header_item">
+				<div class="lang_selector">
+					<span>LANG :&nbsp;</span>
+					<div class="lang">
+						<span>FR</span>
+						<span>&nbsp;/&nbsp;</span>
+						<span>EN</span>
+					</div>
+				</div>
+				<div class="menu">
+					<span>MENU</span>
+				</div>
+			</div>
+		</div>
+
+		<div style="display: contents">%sveltekit.body%</div>
+
+	</body>
+</html>

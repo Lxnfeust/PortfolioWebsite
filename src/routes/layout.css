@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 32px;
+    padding-bottom: 32px;
+    gap: 200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 24px 0px;
+}
+
+
+.header .header_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: auto;
+    width: 25vw;
+}
+
+.header .header_item .credits {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: auto;
+    width: 100%;
+    color: brown;
+}
+
+.header .header_item .lang_selector {
+    display: flex;
+}
+
+.header .header_item .lang_selector .lang {
+    display: flex;
+}
+
+.container_home {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.heading {
+    display: flex;
+}
+
+.heading::after {
+    content: '';
+    width: 100px;
+    height: 2px;
+    display: flex;
+    color: black;
+    top: 0;
+}
+
+.Section_seemore {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.Section_seemore .seemore_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
