@@ -1,11 +1,26 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: "metal";
+  src: url("$lib/assets/fonts/Metal/Metal-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "amiri";
+  src: url("$lib/assets/fonts/Amiri/Amiri-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("$lib/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont.ttf") format("truetype");
+}
+
+
 body {
     display: flex;
     flex-direction: column;
     margin: 0px 32px;
     padding-bottom: 32px;
-    gap: 200px;
 }
 
 .header {
@@ -43,22 +58,98 @@ body {
 
 .container_home {
     display: flex;
+    align-items: top;
     flex-direction: column;
     gap: 120px;
 }
 
 .heading {
     display: flex;
+    align-items: baseline;
+    gap: 1rem;
 }
 
-.heading::after {
-    content: '';
-    width: 100px;
-    height: 2px;
+.heading span {
     display: flex;
-    color: black;
-    top: 0;
+    font-family: metal;
+    font-size: 2.5rem;
+    line-height: 85%;
+    text-transform: uppercase;
 }
+
+.heading h1 {
+    display: flex;
+    font-family: amiri;
+    font-size: 10rem;
+    line-height: 85%;
+    text-transform: uppercase;
+}
+
+.heading hr {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+
+.selectedprojects {
+    width: 100%;
+    height: 30rem;
+    padding: 5rem 0rem 5rem 0rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedprojects .sp_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 40rem;
+    margin: auto;
+}
+
+.selectedprojects .sp_card .sp_card_Line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.selectedprojects .sp_card .sp_card_Line .sp_card_Item {
+    display: flex;
+    align-items: top;
+    gap: 0.5rem;
+}
+
+.selectedprojects .sp_card .sp_card_Line .sp_card_Item span {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 80%;
+    font-size: 1rem;
+}
+
+.selectedprojects .sp_card .sp_card_Line .sp_card_Item p {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 80%;
+    font-size: 2rem;
+}
+
+.selectedprojects .sp_card .sp_card_ProjectName {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: translate(0rem, 8rem);
+}
+
+.selectedprojects .sp_card .sp_card_ProjectName span {
+    font-family: amiri;
+    text-transform: uppercase;
+    line-height: 85%;
+    font-size: 5rem;
+}
+
 
 .Section_seemore {
     display: block;
