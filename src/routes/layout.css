@@ -15,13 +15,17 @@
   src: url("$lib/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont.ttf") format("truetype");
 }
 
+/* ------------------------------------------ BODY ------------------------------------------ */
 
 body {
     display: flex;
     flex-direction: column;
     margin: 0px 32px;
-    padding-bottom: 32px;
+    height: 100vh;
 }
+
+
+/* ------------------------------------------ HEADER ------------------------------------------ */
 
 .header {
     display: flex;
@@ -29,7 +33,6 @@ body {
     width: 100%;
     margin: 24px 0px;
 }
-
 
 .header .header_item {
     display: flex;
@@ -56,13 +59,8 @@ body {
     display: flex;
 }
 
-.container_home {
-    display: flex;
-    align-items: top;
-    flex-direction: column;
-    gap: 120px;
-}
 
+/* Heading */
 .heading {
     display: flex;
     align-items: baseline;
@@ -87,11 +85,21 @@ body {
 
 .heading hr {
     width: 100%;
+    min-width: 1px;
     height: 2px;
     background-color: black;
 }
 
+/* ------------------------------------------ HOME PAGE ------------------------------------------ */
 
+.container_home {
+    display: flex;
+    align-items: top;
+    flex-direction: column;
+    gap: 120px;
+}
+
+/* SECTION Selected Projects */
 .selectedprojects {
     width: 100%;
     height: 30rem;
@@ -150,7 +158,7 @@ body {
     font-size: 5rem;
 }
 
-
+/* SECTION See More */
 .Section_seemore {
     display: block;
     align-items: center;
@@ -164,4 +172,123 @@ body {
     width: 100%;
 }
 
+/* ------------------------------------------ PROJECTS PAGE ------------------------------------------ */
 
+/* containers */
+.container_projects {
+    display: flex;
+    align-items: top;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.content_projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* SECTION Projects */
+.Section_projects {
+    width: 100rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects_cover {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.projects_cover .image_cover {
+    width: 600px;
+    height: 520px;
+    margin: auto;
+    background-color: #151515;
+}
+
+.projects_cover .text_projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40vw;
+}
+
+.projects_cover .text_projects h2 {
+    font-family: amiri;
+    text-transform: uppercase;
+    line-height: 85%;
+    font-size: 3rem;
+}
+
+.projects_cover .text_projects p {
+    font-family: bricolage-grotesque;
+    font-weight: Medium;
+    line-height: 100%;
+    font-size: 1rem;
+}
+
+.projects_index {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+.projects_index .projects_item {
+    display: flex;
+    gap: 2.25rem;
+    align-items: end;
+    color: #151515;
+    opacity: 60%;
+}
+
+.projects_index .projects_item:hover {
+    opacity: 100%;
+}
+
+.projects_index .projects_item .project_item_number {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 80%;
+    font-size: 2rem;
+    width: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+}
+
+.projects_index .projects_item .project_item_info {
+    display: flex;
+    gap: 1rem;
+}
+
+.projects_index .projects_item .project_item_info .project_item_category {
+    display: flex;
+    gap: 0.25rem;
+    align-items: top;
+}
+
+.projects_index .projects_item .project_item_info .project_item_category span {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 80%;
+    font-size: 1rem;
+}
+
+.projects_index .projects_item .project_item_info .project_item_category h3 {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 80%;
+    font-size: 2rem;
+}
