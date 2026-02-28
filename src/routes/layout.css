@@ -20,7 +20,8 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: 0px 32px;
+    margin: 0 2rem;
+    margin-bottom: 2rem;
     height: 100vh;
 }
 
@@ -84,7 +85,7 @@ body {
 }
 
 .heading hr {
-    width: 100%;
+    flex: 1;
     min-width: 1px;
     height: 2px;
     background-color: black;
@@ -177,35 +178,38 @@ body {
 /* containers */
 .container_projects {
     display: flex;
+    flex: 1;
+    min-height: 0;
     align-items: top;
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    height: 100%;
     margin-bottom: 2rem;
 }
 
 .content_projects {
     width: 100%;
     display: flex;
+    flex: 1;
+    min-height: 0;
     justify-content: space-between;
-    height: 100%;
 }
 
 /* SECTION Projects */
 .Section_projects {
     width: 100rem;
-    height: 100%;
     display: flex;
+    flex: 1;
+    min-height: 0;
     justify-content: space-between;
 }
 
 .projects_cover {
     display: flex;
+    flex: 1;
+    min-height: 0;
     flex-direction: column;
-    align-items: end;
     justify-content: space-between;
-    height: 100%;
 }
 
 .projects_cover .image_cover {
@@ -238,10 +242,11 @@ body {
 
 .projects_index {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 5rem;
     max-height: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .projects_index .projects_item {
@@ -250,6 +255,7 @@ body {
     align-items: end;
     color: #151515;
     opacity: 60%;
+    width: 40vw;
 }
 
 .projects_index .projects_item:hover {
@@ -261,7 +267,7 @@ body {
     text-transform: uppercase;
     line-height: 80%;
     font-size: 2rem;
-    width: 2rem;
+    width: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -291,4 +297,154 @@ body {
     text-transform: uppercase;
     line-height: 80%;
     font-size: 2rem;
+}
+
+/* SECTION Indic */
+.Section_indic {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    align-items: end;
+    justify-content: end;
+    margin-top: auto;
+    gap: 20vh;
+}
+
+.Section_indic h2 {
+    font-family: amiri;
+    text-transform: uppercase;
+    line-height: 85%;
+    font-size: 3rem;
+}
+
+.Section_indic .scroll_indic {
+    transform: rotate(-90deg);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.Section_indic .scroll_indic span {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    font-weight: Medium;
+    line-height: 100%;
+    font-size: 1.25rem;
+}
+
+.Section_indic .scroll_indic hr {
+    width: 100%;
+    min-width: 50px;
+    height: 2px;
+    background-color: #151515;
+}
+
+
+/* ------------------------------------------ PAGE PROJECT ------------------------------------------ */
+
+/* containers */
+.container_project_page {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    align-items: top;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.content_project_page {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 12.5rem;
+    width: fit-content;
+    overflow: auto;
+}
+
+/* SECTION intro */
+.section_intro {
+    position: relative;
+    width: 65rem;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_intro .text_context {
+    display: flex;
+    flex-direction: column;
+    width: 27.5rem;
+    margin: auto;
+    gap: 1rem;
+}
+
+.section_intro .text_context h3 {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    line-height: 100%;
+    font-size: 2rem;
+}
+
+.section_intro .text_context p {
+    font-family: bricolage-grotesque;
+    font-weight: Medium;
+    line-height: 100%;
+    font-size: 1rem;
+}
+
+.section_intro .year {
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    /* transform:translate(100%,-100%); */
+}
+
+.section_intro .year h2 {
+    font-family: metal;
+    font-size: 5rem;
+    line-height: 85%;
+    text-transform: uppercase;
+}
+
+.section_intro .indic {
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+    /* transform:translate(-100%,-100%); */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.section_intro .indic span {
+    font-family: bricolage-grotesque;
+    text-transform: uppercase;
+    font-weight: Medium;
+    line-height: 100%;
+    font-size: 1.25rem;
+}
+
+.section_intro .indic hr {
+    width: 100%;
+    min-width: 50px;
+    height: 2px;
+    background-color: #151515;
+}
+
+/* SECTION project */
+.section_project {
+    width: 65rem;
+    background-color: aqua;
+}
+
+/* SECTION nextproject */
+.section_nextproject {
+    width: 65rem;
+    background-color: #151515;
 }
