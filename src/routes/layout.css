@@ -18,8 +18,6 @@
 /* ------------------------------------------ BODY ------------------------------------------ */
 
 body {
-    display: flex;
-    flex-direction: column;
     margin: 0 2rem;
     height: 100vh;
 }
@@ -67,6 +65,14 @@ body {
     gap: 1rem;
 }
 
+.heading.project_page {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    position: sticky;
+    left: 0;
+}
+
 .heading span {
     display: flex;
     font-family: metal;
@@ -79,7 +85,9 @@ body {
     display: flex;
     font-family: amiri;
     font-size: 10rem;
-    line-height: 85%;
+    /* line-height: 85%; */
+    margin-top: -1.5rem;
+    margin-bottom: -2.25rem;
     text-transform: uppercase;
 }
 
@@ -368,19 +376,22 @@ body {
     display: flex;
     flex: 1;
     min-height: 0;
+    height: 100%;
     align-items: top;
     flex-direction: column;
     gap: 24px;
     width: 100%;
+    overflow: auto;
 }
 
 .content_project_page {
     display: flex;
+    height: 100%;
     flex: 1;
     flex-direction: row;
     gap: 12.5rem;
     width: fit-content;
-    overflow: auto;
+    margin-bottom: 2rem;
 }
 
 /* SECTION intro */
@@ -411,7 +422,7 @@ body {
 .section_intro .text_context p {
     font-family: bricolage-grotesque;
     font-weight: Medium;
-    line-height: 100%;
+    line-height: 110%;
     font-size: 1rem;
 }
 
@@ -419,14 +430,13 @@ body {
     position: absolute;
     left: 0rem;
     bottom: 0rem;
-    /* transform:translate(100%,-100%); */
 }
 
 .section_intro .year h2 {
     font-family: metal;
     font-size: 5rem;
-    line-height: 85%;
     text-transform: uppercase;
+    margin-bottom: -0.5rem;
 }
 
 .section_intro .indic {
@@ -444,7 +454,6 @@ body {
     font-family: bricolage-grotesque;
     text-transform: uppercase;
     font-weight: Medium;
-    line-height: 100%;
     font-size: 1.25rem;
 }
 
@@ -464,5 +473,4 @@ body {
 /* SECTION nextproject */
 .section_nextproject {
     width: 65rem;
-    background-color: #151515;
 }

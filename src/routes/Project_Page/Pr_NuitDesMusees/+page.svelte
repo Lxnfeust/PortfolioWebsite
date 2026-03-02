@@ -1,5 +1,5 @@
 <div class="container_project_page">
-    <div class="heading">
+    <div class="heading project_page">
         <span>01.</span>
         <h1>Nuit des Musées</h1>
         <hr>
@@ -24,7 +24,7 @@
         <div class="section_nextproject">
             <div class="name">
                 <span>02.</span>
-                <span>→</span>
+                <span>AALCC</span>
             </div>
             <div class="image">
 
