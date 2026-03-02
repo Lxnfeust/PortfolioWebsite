@@ -179,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="projects_item">
+                <div class="projects_item last-child">
                     <div class="project_item_number">
                         <span>11.</span>
                     </div>

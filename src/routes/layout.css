@@ -21,7 +21,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 2rem;
-    margin-bottom: 2rem;
     height: 100vh;
 }
 
@@ -184,7 +183,6 @@ body {
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    margin-bottom: 2rem;
 }
 
 .content_projects {
@@ -202,6 +200,12 @@ body {
     flex: 1;
     min-height: 0;
     justify-content: space-between;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.Section_projects::-webkit-scrollbar {
+  display: none;
 }
 
 .projects_cover {
@@ -210,6 +214,11 @@ body {
     min-height: 0;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    height: stretch;
+    position: sticky;
+    top: 0;
+    padding-bottom: 2rem;
 }
 
 .projects_cover .image_cover {
@@ -241,12 +250,18 @@ body {
 }
 
 .projects_index {
+    z-index: 50;
     display: flex;
     flex: 1;
     flex-direction: column;
     gap: 5rem;
     max-height: 100%;
-    overflow: auto;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.projects_index .last-child {
+    padding-bottom: 2rem;
 }
 
 .projects_index .projects_item {
@@ -303,12 +318,14 @@ body {
 .Section_indic {
     display: flex;
     flex-direction: column;
-    flex: 1;
     min-height: 0;
     align-items: end;
     justify-content: end;
     margin-top: auto;
     gap: 20vh;
+    position: sticky;
+    right: 2rem;
+    bottom: 2rem;
 }
 
 .Section_indic h2 {
@@ -319,11 +336,13 @@ body {
 }
 
 .Section_indic .scroll_indic {
-    transform: rotate(-90deg);
+    transform: translateX(50%) rotate(-90deg);
     display: flex;
     align-items: center;
     justify-content: end;
     gap: 1rem;
+    flex: 1;
+    bottom: 0;
 }
 
 .Section_indic .scroll_indic span {
@@ -353,7 +372,6 @@ body {
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    margin-bottom: 2rem;
 }
 
 .content_project_page {
