@@ -28,7 +28,7 @@
 				</div>
 			</div>
 		</header>
-	<main class="grow" >
+	<main class="grow h-full max-h-[calc(100vh-72px)]" >
 	{@render children()}
 	</main>
 

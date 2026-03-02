@@ -15,6 +15,10 @@
   src: url("$lib/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont.ttf") format("truetype");
 }
 
+@theme {
+    --font-sans:"bricolage-grotesque"
+}
+
 /* ------------------------------------------ BODY ------------------------------------------ */
 
 body {
@@ -63,6 +67,13 @@ body {
     display: flex;
     align-items: baseline;
     gap: 1rem;
+}
+
+.heading.page_projects {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    position: sticky;
 }
 
 .heading.project_page {
@@ -186,15 +197,17 @@ body {
 .container_projects {
     display: flex;
     flex: 1;
+    height: 100%;
     min-height: 0;
-    align-items: top;
     flex-direction: column;
     gap: 24px;
     width: 100%;
+    overflow: hidden;
 }
 
 .content_projects {
     width: 100%;
+    max-height: 100%;
     display: flex;
     flex: 1;
     min-height: 0;
@@ -220,6 +233,7 @@ body {
     display: flex;
     flex: 1;
     min-height: 0;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
@@ -327,24 +341,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    align-items: end;
     justify-content: end;
     margin-top: auto;
     gap: 20vh;
     position: sticky;
-    right: 2rem;
     bottom: 2rem;
 }
 
 .Section_indic h2 {
     font-family: amiri;
     text-transform: uppercase;
-    line-height: 85%;
     font-size: 3rem;
+    margin-bottom: -1.5rem;
 }
 
 .Section_indic .scroll_indic {
-    transform: translateX(50%) rotate(-90deg);
+    transform: translateX(calc(50% - 11px)) rotate(-90deg);
     display: flex;
     align-items: center;
     justify-content: end;
@@ -357,7 +369,7 @@ body {
     font-family: bricolage-grotesque;
     text-transform: uppercase;
     font-weight: Medium;
-    line-height: 100%;
+    line-height: 110%;
     font-size: 1.25rem;
 }
 

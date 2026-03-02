@@ -1,5 +1,5 @@
 <div class="container_projects">
-    <div class="heading">
+    <div class="heading page_projects">
         <span>B.</span>
         <h1>Works</h1>
         <hr>
