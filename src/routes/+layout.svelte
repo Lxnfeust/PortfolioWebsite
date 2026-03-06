@@ -1,35 +1,46 @@
-<script>
+<script lang="ts">
+	import Menu from '$lib/components/Menu.svelte';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
+
+	let showMenu: boolean = $state(false);
 
 	let { children } = $props();
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<div class="flex flex-col h-full">
+<div class="flex h-full flex-col">
 	<header class="header">
-			<div class="header_item">
-				<div class="credits">
-					<span>Mattéo Lambert</span>
-					<span>Portfolio</span>
+		<div class="header_item">
+			<div class="credits">
+				<span class="text-xl leading-[105%] font-medium">Mattéo Lambert</span>
+				<span class="text-xl leading-[105%] font-medium">Portfolio</span>
+			</div>
+		</div>
+		<div class="header_item">
+			<div class="lang_selector">
+				<span class="text-xl leading-[105%] font-medium">LANG :&nbsp;</span>
+				<div class="lang">
+					<span class="text-xl leading-[105%] font-medium">FR</span>
+					<span class="text-xl leading-[105%] font-medium">&nbsp;/&nbsp;</span>
+					<span class="text-xl leading-[105%] font-medium">EN</span>
 				</div>
 			</div>
-			<div class="header_item">
-				<div class="lang_selector">
-					<span>LANG :&nbsp;</span>
-					<div class="lang">
-						<span>FR</span>
-						<span>&nbsp;/&nbsp;</span>
-						<span>EN</span>
-					</div>
-				</div>
-				<div class="menu">
-					<span>MENU</span>
-				</div>
+			<div class="menu">
+				<button
+					onclick={() => (showMenu = !showMenu)}
+					class="cursor-pointer text-xl leading-[105%] font-medium uppercase underline underline-offset-4"
+					>Menu</button
+				>
+				<Menu bind:showMenu />
 			</div>
-		</header>
-	<main class="grow h-full max-h-[calc(100vh-72px)]" >
-	{@render children()}
+		</div>
+	</header>
+	<main class="mt-18 h-full max-h-[calc(100vh-72px)] grow">
+		{@render children()}
 	</main>
-
 </div>
+<div
+	class="pointer-events-none fixed inset-0 z-50 h-full w-full bg-theme-black-opacity transition duration-400"
+	class:bg-theme-black-opacity={!showMenu}
+></div>
