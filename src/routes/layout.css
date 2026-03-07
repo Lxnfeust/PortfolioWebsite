@@ -298,7 +298,7 @@ body {
 	align-items: end;
 	color: #151515;
 	opacity: 60%;
-	width: 40vw;
+	width: fit-content;
 }
 
 .projects_index .projects_item:hover {

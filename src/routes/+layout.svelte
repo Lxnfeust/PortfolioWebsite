@@ -44,3 +44,7 @@
 	class="pointer-events-none fixed inset-0 z-50 h-full w-full bg-theme-black-opacity transition duration-400"
 	class:bg-theme-black-opacity={!showMenu}
 ></div>
+
+<div class="fixed inset-0 -z-1 flex h-full w-full items-center justify-center">
+	<img src="/images/emboss_star.png" alt="" class="w-full max-w-3xl object-contain" />
+</div>

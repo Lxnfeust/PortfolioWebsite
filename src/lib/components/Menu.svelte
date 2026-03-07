@@ -3,9 +3,9 @@
 
 	const navItems = [
 		{ number: 'A', name: 'Accueil', href: '/' },
-		{ number: 'B', name: 'Projets', href: '/projets' },
-		{ number: 'C', name: 'Laboratoire', href: '/laboratoire' },
-		{ number: 'D', name: 'À propos de moi', href: '/a-propos-de-moi' }
+		{ number: 'B', name: 'Projets', href: '/projects' },
+		{ number: 'C', name: 'Laboratoire', href: '/laboratory' },
+		{ number: 'D', name: 'À propos de moi', href: '/about-me' }
 	];
 </script>
 
