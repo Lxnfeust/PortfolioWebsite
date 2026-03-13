@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class:translate-y-0={!showMenu}
+	class:translate-y-0={showMenu}
 	class="fixed top-0 right-0 z-60 flex w-full max-w-120 -translate-y-full flex-col gap-10 bg-white px-8 pt-6 pb-8 text-theme-black transition duration-400"
 >
 	<button
