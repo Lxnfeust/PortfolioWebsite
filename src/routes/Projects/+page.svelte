@@ -99,6 +99,7 @@
 						onmouseenter={() => (imageCover = project.image)}
 						href={project.link}
 						data-image={project.image}
+						class="w-fit"
 					>
 						<div class="projects_item">
 							<div class="project_item_number">

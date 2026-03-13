@@ -3,14 +3,14 @@
 
 	const navItems = [
 		{ number: 'A', name: 'Accueil', href: '/' },
-		{ number: 'B', name: 'Projets', href: '/projets' },
-		{ number: 'C', name: 'Laboratoire', href: '/laboratoire' },
-		{ number: 'D', name: 'À propos de moi', href: '/a-propos-de-moi' }
+		{ number: 'B', name: 'Projets', href: '/projects' },
+		{ number: 'C', name: 'Laboratoire', href: '/laboratory' },
+		{ number: 'D', name: 'À propos de moi', href: '/about-me' }
 	];
 </script>
 
 <div
-	class:translate-y-0={!showMenu}
+	class:translate-y-0={showMenu}
 	class="fixed top-0 right-0 z-60 flex w-full max-w-120 -translate-y-full flex-col gap-10 bg-white px-8 pt-6 pb-8 text-theme-black transition duration-400"
 >
 	<button
