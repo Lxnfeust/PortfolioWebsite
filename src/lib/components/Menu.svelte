@@ -29,7 +29,8 @@
 					<li>
 						<a href={navItem.href} class="flex items-end gap-1"
 							><span class="text-xl font-medium">{navItem.number}.</span><span
-								class="font-amiri text-4.5xl leading-[85%] uppercase italic">{navItem.name}</span
+								class="translate-x-0 font-amiri text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-5"
+								>{navItem.name}</span
 							></a
 						>
 					</li>
