@@ -21,21 +21,20 @@
 	--font-amiri: 'amiri';
 	--font-metal: 'metal';
 	--color-theme-white: #eeeded;
-	--color-theme-black: rgb(21, 21, 21);
-	--color-theme-black-opacity: rgba(21, 21, 21, 0.1);
+	--color-theme-black: #151515;
+	--color-theme-black-opacity: rgba(21, 21, 21, 0.05);
 	--text-4\.5xl: 40px;
 }
 
 /* ------------------------------------------ BODY ------------------------------------------ */
 
-/* body {
-	margin: 0 2rem;
+body {
 	height: 100vh;
-} */
+} 
 
 /* ------------------------------------------ HEADER ------------------------------------------ */
 
-.header {
+/* .header {
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
@@ -58,7 +57,7 @@
 	justify-content: space-between;
 	gap: auto;
 	width: 100%;
-	color: brown;
+	color: #151515;
 }
 
 .header .header_item .lang_selector {
@@ -67,10 +66,10 @@
 
 .header .header_item .lang_selector .lang {
 	display: flex;
-}
+} */
 
 /* Heading */
-.heading {
+/* .heading {
 	display: flex;
 	align-items: baseline;
 	gap: 1rem;
@@ -90,8 +89,9 @@
 	gap: 1rem;
 	position: sticky;
 	left: 0;
-}
+} */
 
+/*
 .heading span {
 	display: flex;
 	font-family: metal;
@@ -104,7 +104,6 @@
 	display: flex;
 	font-family: amiri;
 	font-size: 10rem;
-	/* line-height: 85%; */
 	margin-top: -1.5rem;
 	margin-bottom: -2.25rem;
 	text-transform: uppercase;
@@ -113,9 +112,10 @@
 .heading hr {
 	flex: 1;
 	min-width: 1px;
-	height: 2px;
+	height: 1px;
 	background-color: black;
 }
+*/
 
 /* ------------------------------------------ HOME PAGE ------------------------------------------ */
 
@@ -200,7 +200,7 @@
 
 /* ------------------------------------------ PROJECTS PAGE ------------------------------------------ */
 
-/* containers */
+/* containers
 .container_projects {
 	display: flex;
 	flex: 1;
@@ -208,8 +208,8 @@
 	min-height: 0;
 	flex-direction: column;
 	gap: 24px;
-	width: 100%;
 	overflow: hidden;
+	margin: 0 2rem;
 }
 
 .content_projects {
@@ -222,7 +222,7 @@
 }
 
 /* SECTION Projects */
-.Section_projects {
+/* .Section_projects {
 	width: 100rem;
 	display: flex;
 	flex: 1;
@@ -279,7 +279,7 @@
 }
 
 .projects_index {
-	z-index: 50;
+	z-index: 20;
 	display: flex;
 	flex: 1;
 	flex-direction: column;
@@ -384,7 +384,7 @@
 	min-width: 50px;
 	height: 2px;
 	background-color: #151515;
-}
+} */
 
 /* ------------------------------------------ PAGE PROJECT ------------------------------------------ */
 
