@@ -211,9 +211,9 @@
 <div class="container_home px-6 pb-6">
 	<div class="flex h-[calc(100lvh-100px)] flex-col justify-between">
 		<div class="heading flex items-baseline gap-2">
-			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl"
-				>A.</span
-			>
+			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl">
+				A.
+			</span>
 			<h1 class="xl:text-10xl -mt-6 -mb-9 flex font-amiri text-4.5xl uppercase md:text-6.5xl">
 				Portfolio
 			</h1>
