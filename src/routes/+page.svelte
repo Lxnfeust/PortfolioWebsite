@@ -210,14 +210,11 @@
 
 <div class="container_home px-6 pb-6">
 	<div class="flex h-[calc(100lvh-100px)] flex-col justify-between">
-		<div class="heading">
-			<span
-				class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl lg:text-3.5xl xl:text-[2.5rem]"
+		<div class="heading flex items-baseline gap-2">
+			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl"
 				>A.</span
 			>
-			<h1
-				class="-mt-6 -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] lg:text-[4rem] xl:text-[10rem]"
-			>
+			<h1 class="xl:text-10xl -mt-6 -mb-9 flex font-amiri text-4.5xl uppercase md:text-6.5xl">
 				Portfolio
 			</h1>
 			<hr class="h-px min-w-px flex-1 bg-black" />
@@ -233,12 +230,12 @@
 			</div>
 			<div class="flex justify-between">
 				<h2
-					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl lg:text-5xl xl:text-7.5xl"
+					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
 				>
 					Mattéo
 				</h2>
 				<h2
-					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl lg:text-5xl xl:text-7.5xl"
+					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
 				>
 					Lambert
 				</h2>
@@ -260,7 +257,7 @@
 	<div class="flex flex-col gap-16">
 		<div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-0">
 			<h2
-				class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl lg:text-5xl xl:text-7.5xl"
+				class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
 			>
 				Projets sélectionnés
 			</h2>
@@ -276,7 +273,7 @@
 	</div>
 	<div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-0">
 		<h2
-			class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl lg:text-5xl xl:text-7.5xl"
+			class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
 		>
 			En voir plus&nbsp;?
 		</h2>
