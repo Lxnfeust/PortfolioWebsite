@@ -11,15 +11,15 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <div class="flex h-full flex-col">
 	<header class="header">
-		<div class="header_item">
+		<div class="header_item hidden w-[25vw] items-center justify-center md:flex">
 			<div class="credits">
 				<span class="text-xl leading-[105%] font-medium">Mattéo Lambert</span>
 				<span class="text-xl leading-[105%] font-medium">Portfolio</span>
 			</div>
 		</div>
-		<div class="header_item">
+		<div class="header_item flex w-full items-center justify-between md:w-[25vw]">
 			<div class="lang_selector">
-				<span class="text-xl leading-[105%] font-medium">LANG :&nbsp;</span>
+				<span class="hidden text-xl leading-[105%] font-medium md:block">LANG :&nbsp;</span>
 				<div class="lang">
 					<span class="text-xl leading-[105%] font-medium">FR</span>
 					<span class="text-xl leading-[105%] font-medium">&nbsp;/&nbsp;</span>

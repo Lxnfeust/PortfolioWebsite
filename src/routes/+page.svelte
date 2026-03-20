@@ -16,7 +16,7 @@
 				}
 			],
 			link: {
-				url: '/projects/la-nuit-des-musees',
+				url: '/projects/nuit-des-musees',
 				target: ''
 			}
 		},
@@ -28,11 +28,11 @@
 			images: [
 				{
 					src: '/images/aalcc.jpg',
-					alt: 'Nuit des Musées - Image 1'
+					alt: 'AALCC - Image 1'
 				},
 				{
 					src: '/images/aalcc.jpg',
-					alt: 'Nuit des Musées - Image 2'
+					alt: 'AALCC - Image 2'
 				}
 			],
 			link: {
@@ -48,15 +48,15 @@
 			images: [
 				{
 					src: '/images/serie_motion.jpg',
-					alt: 'Nuit des Musées - Image 1'
+					alt: 'Serie motion - Image 1'
 				},
 				{
 					src: '/images/serie_motion.jpg',
-					alt: 'Nuit des Musées - Image 2'
+					alt: 'Serie motion - Image 2'
 				}
 			],
 			link: {
-				url: '/projects/visual-series',
+				url: '/projects/serie-motion',
 				target: ''
 			}
 		},
@@ -68,11 +68,11 @@
 			images: [
 				{
 					src: '/images/bacchanight.jpg',
-					alt: 'Nuit des Musées - Image 1'
+					alt: 'Bacchanight - Image 1'
 				},
 				{
 					src: '/images/bacchanight.jpg',
-					alt: 'Nuit des Musées - Image 2'
+					alt: 'Bacchanight - Image 2'
 				}
 			],
 			link: {

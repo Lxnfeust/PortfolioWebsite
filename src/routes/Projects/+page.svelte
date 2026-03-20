@@ -5,67 +5,67 @@
 		{
 			title: 'Nuit des Musées',
 			year: 2024,
-			link: '/Project_Page/Pr_NuitDesMusees',
-			image: '/images/la_nuit_des_musees.jpg'
+			link: '$lib/data/projects/nuit-des-musees',
+			image: '/images/nuit_des_musees.jpg'
 		},
 		{
 			title: 'A.A.L.C.C',
 			year: 2025,
-			link: '#',
+			link: '$lib/data/projects/aalcc',
 			image: '/images/aalcc.jpg'
 		},
 		{
 			title: 'Série Motion',
 			year: 2026,
-			link: '#',
+			link: '$lib/data/projects/serie-motion',
 			image: '/images/serie_motion.jpg'
 		},
 		{
 			title: 'Château Lagrange',
 			year: 2025,
-			link: '#',
+			link: '$lib/data/projects/chateau-lagrange',
 			image: '/images/chateau_lagrange.jpg'
 		},
 		{
 			title: 'Showreel',
 			year: 2024,
-			link: '#',
+			link: '$lib/data/projects/showreel',
 			image: '/images/showreel.jpg'
 		},
 		{
 			title: 'Bacchanight',
 			year: 2023,
-			link: '#',
+			link: '$lib/data/projects/bacchanight',
 			image: '/images/bacchanight.jpg'
 		},
 		{
 			title: 'Valeria',
 			year: 2024,
-			link: '#',
+			link: '$lib/data/projects/valeria',
 			image: '/images/valeria.jpg'
 		},
 		{
 			title: 'Sapio Spirits',
 			year: 2026,
-			link: '#',
+			link: '$lib/data/projects/sapio-spirits',
 			image: '/images/sapio_spirits.jpg'
 		},
 		{
 			title: 'Domaine Giscours',
 			year: 2026,
-			link: '#',
+			link: '$lib/data/projects/domaine-giscours',
 			image: '/images/domaine_giscours.jpg'
 		},
 		{
 			title: 'La Boîte à Cailloux',
 			year: 2024,
-			link: '#',
+			link: '$lib/data/projects/la-boite-a-cailloux',
 			image: '/images/la_boite_a_cailloux.jpg'
 		},
 		{
 			title: 'Bikers au Grand Coeur',
 			year: 2024,
-			link: '#',
+			link: '$lib/data/projects/bikers-au-grand-coeur',
 			image: '/images/bikers_au_grand_coeur.jpg'
 		}
 	];

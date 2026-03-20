@@ -23,7 +23,10 @@
 	--color-theme-white: #eeeded;
 	--color-theme-black: rgb(21, 21, 21);
 	--color-theme-black-opacity: rgba(21, 21, 21, 0.1);
+	--text-2\.5xl: 28px;
+	--text-3\.5xl: 32px;
 	--text-4\.5xl: 40px;
+	--text-6\.5xl: 64px;
 }
 
 /* ------------------------------------------ BODY ------------------------------------------ */
@@ -42,14 +45,6 @@
 	width: 100%;
 	padding: 24px 32px;
 	z-index: 50;
-}
-
-.header .header_item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: auto;
-	width: 25vw;
 }
 
 .header .header_item .credits {
