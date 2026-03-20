@@ -1,0 +1,45 @@
+{
+	"id": "8",
+	"slug": "sapio-spirits",
+	"year": "2026",
+	"name": "Sapio spirits",
+	"title": "L’étoile montante des spiritueux français",
+	"description": "Dans le cadre de mon alternance chez Favoreat Design, j’ai pu réaliser, suite à une refont graphique, une présentation de la marque Sapio. Entouré et aidé par mes collègues, j’ai mené à bien la demande et posé les bases des systèmes visuels et graphiques de la marque sur ses supports de communication.",
+	"presentation_image": {
+		"src": "/images/sapio_spirits.jpg",
+		"alt": "Image de présentation du projet Sapio spirits"
+	},
+	"project_infos": {
+		"title": "Réseaux sociaux",
+		"description": "Par la suite j’ai également réalisé quelques posts en Motion Design pour leur Instagram. Certains sont des templates réemployables tout au long de l’année tandis que d’autres sont ponctuels.",
+		"links": [
+			{
+				"url": "",
+				"text": "Instagram",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{
+			"src": "/images/sapio_spirits.jpg",
+			"alt": "Image 1 du projet Sapio spirits"
+		},
+		{
+			"src": "/images/sapio_spirits.jpg",
+			"alt": "Image 2 du projet Sapio spirits"
+		},
+		{
+			"src": "/images/sapio_spirits.jpg",
+			"alt": "Image 3 du projet Sapio spirits"
+		},
+		{
+			"src": "/images/sapio_spirits.jpg",
+			"alt": "Image 4 du projet Sapio spirits"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"id": "3",
+	"slug": "serie-motion",
+	"year": "2024",
+	"name": "Série motion",
+	"title": "une série de visuels en motion design.",
+	"description": "Une série de visuels courts réalisés sur le logiciel Cavalry. J’ai choisi pour ce projet de refléter l’ambiance et mon ressenti à l’écoute de la discographie d’un artiste que j’affectionne : 1000 Eyes.",
+	"presentation_image": {
+		"src": "/images/serie_motion.jpg",
+		"alt": "Image de présentation du projet Série motion"
+	},
+	"project_infos": {
+		"title": "Le motion design paramétrique : ",
+		"description": "En choisissant de travailler sur le logiciel Cavalry pour cette série de visuels en motion design, j’ai pu m’éloigner grandement et facilement de la logique des visuels réalisés sur un logiciel comme After Effects par exemple. Cavalry permet de faire plus simplement et sans plug-in des animations et compositions facilement contrôlables & adaptables.",
+		"links": []
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{
+			"src": "/images/serie_motion.jpg",
+			"alt": "Image 1 du projet Série motion"
+		},
+		{
+			"src": "/images/serie_motion.jpg",
+			"alt": "Image 2 du projet Série motion"
+		},
+		{
+			"src": "/images/serie_motion.jpg",
+			"alt": "Image 3 du projet Série motion"
+		},
+		{
+			"src": "/images/serie_motion.jpg",
+			"alt": "Image 4 du projet Série motion"
+		}
+	]
+}

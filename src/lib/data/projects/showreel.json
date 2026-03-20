@@ -1,0 +1,45 @@
+{
+	"id": "5",
+	"slug": "showreel",
+	"year": "2024",
+	"name": "Showreel",
+	"title": "Showreel 2024.",
+	"description": "Courte vidéo de présentation de mes différents projets Vidéo, Motion Design, Graphisme ou encore 3D et Réalité Virtuelle. C’est un condensé des projets que j’ai pu réaliser durant mon BUT MMI, des expériences professionnelles ou sur mon temps libre. (“lxnfeust” est mon alias/pseudo).",
+	"presentation_image": {
+		"src": "/images/showreel.jpg",
+		"alt": "Image de présentation du projet Showreel"
+	},
+	"project_infos": {
+		"title": "plus de détails :",
+		"description": "Ce showreel a été entièrement réalisé par mes soins et sans l’emploi d’aucune template. L’homogénéité globale est présente tout au long de cette vidéo est voulue et vient apporter une forme de cohérence entre différents projets tous singuliers.",
+		"links": [
+			{
+				"url": "",
+				"text": "Vidéo",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{
+			"src": "/images/showreel.jpg",
+			"alt": "Image 1 du projet Showreel"
+		},
+		{
+			"src": "/images/showreel.jpg",
+			"alt": "Image 2 du projet Showreel"
+		},
+		{
+			"src": "/images/showreel.jpg",
+			"alt": "Image 3 du projet Showreel"
+		},
+		{
+			"src": "/images/showreel.jpg",
+			"alt": "Image 4 du projet Showreel"
+		}
+	]
+}

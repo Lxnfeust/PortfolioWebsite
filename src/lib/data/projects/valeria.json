@@ -1,0 +1,45 @@
+{
+	"id": "7",
+	"slug": "valeria",
+	"year": "2024",
+	"name": "Valeria",
+	"title": "Valeria, une expérience immersive en VR.",
+	"description": "Les différents conflits qui déchirent notre monde font sombrer certaines personnes courageuses dans l'oubli. Pour essayer d’y remédier, nous avons conçu une expérience interactive qui mélange 3D et Réalité Virtuelle. Nous avons voulu raconter l'histoire d'une réfugiée Ukrainienne (à travers son témoignage) qui a du fuir son pays à cause de la guerre.",
+	"presentation_image": {
+		"src": "/images/valeria.jpg",
+		"alt": "Image de présentation du projet Valeria"
+	},
+	"project_infos": {
+		"title": "L’envers du décor :",
+		"description": "Pendant ce projet, j'ai pu réaliser l'ensemble des 4 scènes en 3D sur Blender qui constituent les 4 chapitres de l’histoire. Elles ont été modélisées de telle manière à ce que chaque personne qui puisse tester l’expérience se retrouve immergée dans la narration.",
+		"links": [
+			{
+				"url": "",
+				"text": "Vidéo",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{
+			"src": "/images/valeria.jpg",
+			"alt": "Image 1 du projet Valeria"
+		},
+		{
+			"src": "/images/valeria.jpg",
+			"alt": "Image 2 du projet Valeria"
+		},
+		{
+			"src": "/images/valeria.jpg",
+			"alt": "Image 3 du projet Valeria"
+		},
+		{
+			"src": "/images/valeria.jpg",
+			"alt": "Image 4 du projet Valeria"
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"id": "9",
+	"slug": "domaine-giscours",
+	"year": "2026",
+	"name": "Giscours",
+	"title": "PAGE en cours de construction.",
+	"description": "S’il-vous-plaît, revenez plus tard.",
+	"presentation_image": {
+		"src": "/images/la_nuit_des_musees.jpg",
+		"alt": "Image de présentation du projet Nuit des musées"
+	},
+	"project_infos": {
+		"title": "aa",
+		"description": "aa",
+		"links": [
+			{
+				"url": "",
+				"text": "aa",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{
+			"src": "",
+			"alt": ""
+		},
+		{
+			"src": "",
+			"alt": ""
+		},
+		{
+			"src": "",
+			"alt": ""
+		},
+		{
+			"src": "",
+			"alt": ""
+		}
+	]
+}

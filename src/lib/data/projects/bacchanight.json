@@ -1,0 +1,45 @@
+{
+	"id": "6",
+	"slug": "bacchanight",
+	"year": "2023",
+	"name": "Bacchanight",
+	"title": "MusBA Bordeaux, Bacchanight.",
+	"description": "Une expérience interactive pour promouvoir différentes œuvres du Musée des Beaux-Arts de Bordeaux lors de la soirée de la Bacchanight, organisée le 21 Mars 2023. Il s’agit donc de partir à la recherche de l’ombre voleuse du musée via un court-métrage dont vous êtes le héros / l’héroïne.",
+	"presentation_image": {
+		"src": "/images/bacchanight.jpg",
+		"alt": "Image de présentation du projet Bacchanight"
+	},
+	"project_infos": {
+		"title": "L’ombre du musée :",
+		"description": "Ce projet combine de nombreuses expertises variées comme le tournage, le montage, le motion design et les effets spéciaux, dont j'ai été le Directeur Artistique.",
+		"links": [
+			{
+				"url": "",
+				"text": "Site web",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "/images/bacchanight.jpg",
+		"alt": "Poster du projet Bacchanight"
+	},
+	"images": [
+		{
+			"src": "/images/bacchanight.jpg",
+			"alt": "Image 1 du projet Bacchanight"
+		},
+		{
+			"src": "/images/bacchanight.jpg",
+			"alt": "Image 2 du projet Bacchanight"
+		},
+		{
+			"src": "/images/bacchanight.jpg",
+			"alt": "Image 3 du projet Bacchanight"
+		},
+		{
+			"src": "/images/bacchanight.jpg",
+			"alt": "Image 4 du projet Bacchanight"
+		}
+	]
+}

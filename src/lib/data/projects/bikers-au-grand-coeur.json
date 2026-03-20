@@ -1,0 +1,45 @@
+{
+	"id": "11",
+	"slug": "bikers-au-grand-coeur",
+	"year": "2024",
+	"name": "B.G.C",
+	"title": "Bikers au grand cœur, contre le harcèlement.",
+	"description": "Ce projet a pour but de venir en aide aux parents démunis face aux situations de harcèlement que peuvent rencontrer leurs enfants dans les classes de primaire. Bikers au grand Cœur est un jeu de société (gratuit) à imprimer et à faire soi-même permettant d’amorcer le dialogue parent-enfant sur le sujet du harcèlement, trop souvent tabou.",
+	"presentation_image": {
+		"src": "/images/bikers_au_grand_coeur.jpg",
+		"alt": "Image de présentation du projet Bikers au grand cœur"
+	},
+	"project_infos": {
+		"title": "Plus de détails : ",
+		"description": "Ce projet prend la forme d’une ressource pédagogique mise à disposition librement. Les informations contenues sur le site internet permettent de réaliser et de jouer au jeu de société “Bikers au Grand Cœur”.",
+		"links": [
+			{
+				"url": "",
+				"text": "Site web",
+				"target": ""
+			}
+		]
+	},
+	"poster": {
+		"src": "/images/bikers_au_grand_coeur.jpg",
+		"alt": "Poster du projet Bikers au grand cœur"
+	},
+	"images": [
+		{
+			"src": "/images/bikers_au_grand_coeur.jpg",
+			"alt": "Image 1 du projet Bikers au grand cœur"
+		},
+		{
+			"src": "/images/bikers_au_grand_coeur.jpg",
+			"alt": "Image 2 du projet Bikers au grand cœur"
+		},
+		{
+			"src": "/images/bikers_au_grand_coeur.jpg",
+			"alt": "Image 3 du projet Bikers au grand cœur"
+		},
+		{
+			"src": "/images/bikers_au_grand_coeur.jpg",
+			"alt": "Image 4 du projet Bikers au grand cœur"
+		}
+	]
+}

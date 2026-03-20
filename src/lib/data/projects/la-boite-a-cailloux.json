@@ -1,0 +1,39 @@
+{
+	"id": "10",
+	"slug": "la-boite-a-cailloux",
+	"year": "2025",
+	"name": "La boîte à cailloux",
+	"title": "Modélisation 3D de pierres précieuses.",
+	"description": "Ce projet est un site internet fictif dont le déroulé a été simulé en motion design. Pour le mener à bien, j’ai décidé de modéliser moi-même en 3D une géode d’améthyste et un “packshot”. ",
+	"presentation_image": {
+		"src": "/images/la_boite_a_cailloux.jpg",
+		"alt": "Image de présentation du projet La boîte à cailloux"
+	},
+	"project_infos": {
+		"title": "Plans détaillés :",
+		"description": "Les plans modélisés en 3D ont été faits sur le logiciel Blender. En ce qui concerne la géode d’améthyste, elle a été “modélisée” à partir du fonctionnement paramétrique et logique qu’offre l’option “geometry nodes”. Il n’y a donc pas ou très peu d’éléments modélisés à la main. Ces derniers suivent une construction logique qui permet un contrôle quasi-total sur l’objet final.",
+		"links": []
+	},
+	"poster": {
+		"src": "/images/la_boite_a_cailloux.jpg",
+		"alt": "Poster du projet La boîte à cailloux"
+	},
+	"images": [
+		{
+			"src": "/images/la_boite_a_cailloux.jpg",
+			"alt": "Image 1 du projet La boîte à cailloux"
+		},
+		{
+			"src": "/images/la_boite_a_cailloux.jpg",
+			"alt": "Image 2 du projet La boîte à cailloux"
+		},
+		{
+			"src": "/images/la_boite_a_cailloux.jpg",
+			"alt": "Image 3 du projet La boîte à cailloux"
+		},
+		{
+			"src": "/images/la_boite_a_cailloux.jpg",
+			"alt": "Image 4 du projet La boîte à cailloux"
+		}
+	]
+}
