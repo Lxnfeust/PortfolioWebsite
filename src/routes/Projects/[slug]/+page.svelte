@@ -77,19 +77,24 @@
 		</div>
 	</div>
 	{#if nextProject}
-		<a href={`/projects/${nextProject.slug}`} class="mx-16 mt-20 mb-16 flex flex-col gap-2">
-			<div class="flex items-end gap-1">
-				<span class="text-xs leading-none font-medium"
-					>{Number(nextProject.id) > 9 ? nextProject.id : '0' + nextProject.id}.</span
-				>
-				<span class="text-xl leading-[105%] font-medium uppercase">{nextProject.name}</span>
-			</div>
-			<img
-				src={nextProject.presentation_image.src}
-				alt={nextProject.presentation_image.alt}
-				class="aspect-4/3 w-full"
-			/>
-			<span class="self-end leading-[105%] font-medium uppercase">Next project →</span>
-		</a>
+		<div class="flex justify-center">
+			<a
+				href={`/projects/${nextProject.slug}`}
+				class="mx-16 mt-20 mb-16 flex max-w-100 flex-col gap-2"
+			>
+				<div class="flex items-end gap-1">
+					<span class="text-xs leading-none font-medium"
+						>{Number(nextProject.id) > 9 ? nextProject.id : '0' + nextProject.id}.</span
+					>
+					<span class="text-xl leading-[105%] font-medium uppercase">{nextProject.name}</span>
+				</div>
+				<img
+					src={nextProject.presentation_image.src}
+					alt={nextProject.presentation_image.alt}
+					class="aspect-4/3 w-full"
+				/>
+				<span class="self-end leading-[105%] font-medium uppercase">Next project →</span>
+			</a>
+		</div>
 	{/if}
 </section>
