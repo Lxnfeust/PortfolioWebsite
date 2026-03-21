@@ -214,7 +214,7 @@
 			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl">
 				A.
 			</span>
-			<h1 class="xl:text-10xl -mt-6 -mb-9 flex font-amiri text-4.5xl uppercase md:text-6.5xl">
+			<h1 class="xl:text-10xl leading-[70%] -mb-9 flex font-amiri text-4.5xl uppercase md:text-6.5xl">
 				Portfolio
 			</h1>
 			<hr class="h-px min-w-px flex-1 bg-black" />

@@ -25,10 +25,7 @@
 			}
 		]
 	},
-	"poster": {
-		"src": "/images/la_nuit_des_musees.jpg",
-		"alt": "Poster du projet Nuit des musées"
-	},
+	
 	"images": [
 		{
 			"src": "/images/la_nuit_des_musees.jpg",

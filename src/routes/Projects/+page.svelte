@@ -76,7 +76,7 @@
 		<span class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]">
 			B.
 		</span>
-		<h1 class="-mt-6 -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[10rem]">
+		<h1 class="leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[10rem]">
 			Projets
 		</h1>
 		<hr class="h-px min-w-px flex-1 bg-black" />
