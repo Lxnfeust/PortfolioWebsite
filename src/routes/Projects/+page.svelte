@@ -73,10 +73,9 @@
 
 <div class="mx-8 flex h-full min-h-0 flex-1 flex-col gap-6 overflow-hidden">
 	<div class="pointer-events-none sticky flex items-baseline gap-4">
-		<span
-			class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]"
-			>B.</span
-		>
+		<span class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]">
+			B.
+		</span>
 		<h1 class="-mt-6 -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[10rem]">
 			Projets
 		</h1>
@@ -89,7 +88,7 @@
 			class="flex max-h-full min-h-0 w-[100rem] flex-1 justify-between overflow-auto [&::-webkit-scrollbar]:hidden"
 		>
 			<!-- Cover -->
-			<div class="sticky top-0 flex h-full min-h-0 flex-1 flex-col justify-between pb-8">
+			<div class="hidden xl:flex sticky top-0 h-full min-h-0 flex-1 flex-col justify-between pb-8">
 				<div class="relative m-auto h-[520px] w-[600px] bg-theme-black">
 					<img src={imageCover} alt="" class="absolute inset-0 h-full w-full" />
 				</div>
@@ -119,17 +118,17 @@
 							</div>
 							<div class="flex gap-4">
 								<div class="flex items-start gap-1">
-									<span class="font-bricolage-grotesque text-[1rem] leading-[80%] uppercase"
-										>Titre</span
-									>
+									<span class="font-bricolage-grotesque text-[1rem] leading-[80%] uppercase">
+										Titre
+									</span>
 									<h3 class="font-bricolage-grotesque text-[2rem] leading-[80%] uppercase">
 										{project.title}
 									</h3>
 								</div>
 								<div class="flex items-start gap-1">
-									<span class="font-bricolage-grotesque text-[1rem] leading-[80%] uppercase"
-										>Année</span
-									>
+									<span class="font-bricolage-grotesque text-[1rem] leading-[80%] uppercase">
+										Année
+									</span>
 									<h3 class="font-bricolage-grotesque text-[2rem] leading-[80%] uppercase">
 										{project.year}
 									</h3>
