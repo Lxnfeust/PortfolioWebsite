@@ -27,9 +27,9 @@
 			<ul class="flex flex-col gap-4">
 				{#each navItems as navItem, i (i)}
 					<li>
-						<a href={navItem.href} class="flex items-end gap-1"
+						<a href={navItem.href} class="flex items-end gap-2"
 							><span class="text-xl font-medium">{navItem.number}.</span><span
-								class="translate-x-0 font-amiri text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-5"
+								class="translate-x-0 font-amiri text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
 								>{navItem.name}</span
 							></a
 						>

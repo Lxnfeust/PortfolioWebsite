@@ -139,13 +139,13 @@
 				</div>
 				<div class="flex justify-between">
 					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Year</p>
+						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Année</p>
 						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
 							{project.year}
 						</p>
 					</div>
 					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Domain</p>
+						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Domaine</p>
 						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
 							{project.domain}
 						</p>
@@ -160,13 +160,13 @@
 			<div class="group flex w-90 flex-col gap-8 p-4 md:w-140 xl:w-160">
 				<div class="flex justify-between">
 					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Title</p>
+						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Titre</p>
 						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
 							{project.title}
 						</p>
 					</div>
 					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Role</p>
+						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Rôle</p>
 						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
 							{project.role}
 						</p>
@@ -249,7 +249,7 @@
 				</p>
 			</div>
 			<div class="flex flex-col items-center gap-4">
-				<span class="text-base leading-[105%] font-medium uppercase md:text-xl">Scroll</span>
+				<span class="text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl">Scroll</span>
 				<hr class="h-12.5 w-px bg-theme-black" />
 			</div>
 		</div>
@@ -261,7 +261,7 @@
 			>
 				Projets sélectionnés
 			</h2>
-			<a href="/projects" class="text-base leading-[105%] font-medium uppercase md:mb-1 md:text-xl"
+			<a href="/projects" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl"
 				>Voir tous les projets&nbsp;→</a
 			>
 		</div>
@@ -277,7 +277,7 @@
 		>
 			En voir plus&nbsp;?
 		</h2>
-		<a href="/laboratory" class="text-base leading-[105%] font-medium uppercase md:mb-1 md:text-xl"
+		<a href="/laboratory" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl"
 			>Visiter le laboratoire&nbsp;→</a
 		>
 	</div>
@@ -286,13 +286,13 @@
 			Découvrez mes créations spontanées, des projets qui alimentent et font part de mon esprit
 			créatif.
 		</p>
-		<a href="/projects" class="text-base leading-[105%] font-medium uppercase md:text-xl"
+		<a href="/projects" class="text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"
 			>Découvrir&nbsp;→</a
 		>
 	</div>
 	<a
 		href="#top"
-		class="flex justify-center border-y py-4 text-base leading-[105%] font-medium uppercase md:text-xl"
+		class="flex justify-center border-y py-4 text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"
 		>Remonter la page</a
 	>
 </div>
