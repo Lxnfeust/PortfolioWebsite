@@ -8,21 +8,48 @@
 		projectList.find((project) => Number(project.id) === Number(data.id) + 1) ||
 			projectList.find((project) => Number(project.id) === 1)
 	);
+
+	function horizontalScroll(node) {
+		const handler = (e) => {
+		if (e.deltaY !== 0) {
+			e.preventDefault();
+			node.scrollLeft += e.deltaY;
+		}
+		};
+		node.addEventListener('wheel', handler, { passive: false });
+		return {
+		destroy() {
+			node.removeEventListener('wheel', handler);
+		}
+		};
+	}
+
+	import { afterNavigate } from '$app/navigation';
+	afterNavigate(() => {
+    window.scrollTo(0, 0);
+  	});
+
+	let container;
+
+	afterNavigate(() => {
+	window.scrollTo(0, 0);
+	container?.scrollTo(0, 0);
+	});
 </script>
 
 
 
-<section class="flex flex-col gap-30 px-6 pt-6 xl:flex-col xl:h-[calc(100lvh-72px)] xl:overflow-x-auto xl:gap-0 xl:px-0 xl:pt-0">
+<section use:horizontalScroll bind:this={container} class="flex flex-col gap-30 px-6 pt-6 xl:flex-col xl:h-[calc(100lvh-72px)] xl:overflow-x-auto xl:gap-0 xl:px-0 xl:pt-0">
   
 	<!-- TITLE -->
-	<div class="flex items-baseline gap-2 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 xl:pt-10">
+	<div class="flex items-baseline gap-2 xl:gap-4 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 md:pt-0 xl:pt-4">
 		<span class="self-start font-metal text-xl leading-[85%] md:self-end md:text-3.5xl xl:self-auto xl:text-4.5xl">
 			{data.id > 9 ? data.id : '0' + data.id}.
 		</span>
-		<h1 class="font-amiri text-4.5xl leading-[70%] uppercase italic md:text-6.5xl xl:text-10xl xl:-mb-9">
+		<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
 			{data.name}
 		</h1>
-		<hr class="h-px min-w-20 grow self-end bg-theme-black" />
+		<hr class="-mb-3 xl:mb-0 h-px min-w-20 grow self-end bg-theme-black" />
 	</div>
 
   	<!-- CONTENU SCROLLABLE -->

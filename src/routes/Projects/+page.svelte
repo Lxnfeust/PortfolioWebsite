@@ -72,7 +72,7 @@
 </script>
 
 <div class="mx-8 flex h-full min-h-0 flex-1 flex-col gap-6 overflow-hidden">
-	<div class="pointer-events-none sticky flex items-baseline gap-4">
+	<div class="pointer-events-none sticky flex items-baseline gap-2 xl:gap-4">
 		<span class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]">
 			B.
 		</span>
@@ -110,13 +110,13 @@
 						data-image={project.image}
 						class="w-fit"
 					>
-						<div class="flex w-fit items-center xl:items-end gap-9 text-theme-black opacity-60 hover:opacity-100">
+						<div class="flex w-fit items-center xl:items-end gap-4 md:gap-9 text-theme-black opacity-60 hover:opacity-100">
 							<div
 								class="font-bricolage-grotesque flex flex-row items-end justify-end text-[1rem] md:text-xl leading-[80%] uppercase"
 							>
 								<span>{i > 8 ? i + 1 : '0' + (i + 1)}.</span>
 							</div>
-							<div class="flex flex-col md:flex gap-2">
+							<div class="flex flex-col md:flex md:flex-row gap-2">
 								<div class="flex items-start gap-1">
 									<span class="font-bricolage-grotesque text-[0.75rem] md:text-[1rem] leading-[80%] uppercase">
 										Titre
@@ -142,7 +142,7 @@
 		</div>
 
 		<!-- Section Indic -->
-		<div class="sticky bottom-8 mt-auto flex min-h-0 flex-col justify-end gap-[15vh] pb-[5rem] xl:gap-[20vh] xl:pb-[0rem]">
+		<div class="absolute right-[32px] md:right-0 md:sticky bottom-8 md:mt-auto flex min-h-0 flex-col justify-end gap-[15vh] pb-[5rem] xl:gap-[20vh] xl:pb-[0rem]">
 			<div
 				class="bottom-0 flex flex-1 translate-x-[calc(50%-11px)] -rotate-90 items-center justify-end gap-4"
 			>
