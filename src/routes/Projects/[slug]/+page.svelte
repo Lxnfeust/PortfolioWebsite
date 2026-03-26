@@ -11,16 +11,16 @@
 
 	function horizontalScroll(node) {
 		const handler = (e) => {
-		if (e.deltaY !== 0) {
-			e.preventDefault();
-			node.scrollLeft += e.deltaY;
-		}
+			if (window.innerWidth >= 1280 && e.deltaY !== 0) {
+				e.preventDefault();
+				node.scrollLeft += e.deltaY;
+			}
 		};
 		node.addEventListener('wheel', handler, { passive: false });
 		return {
-		destroy() {
-			node.removeEventListener('wheel', handler);
-		}
+			destroy() {
+				node.removeEventListener('wheel', handler);
+			}
 		};
 	}
 
@@ -40,20 +40,29 @@
 
 
 <section use:horizontalScroll bind:this={container} class="flex flex-col gap-30 px-6 pt-6 xl:flex-col xl:h-[calc(100lvh-72px)] xl:overflow-x-auto xl:gap-0 xl:px-0 xl:pt-0">
-  
+
 	<!-- TITLE -->
-	<div class="flex items-baseline gap-2 xl:gap-4 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 md:pt-0 xl:pt-4">
-		<span class="self-start font-metal text-xl leading-[85%] md:self-end md:text-3.5xl xl:self-auto xl:text-4.5xl">
-			{data.id > 9 ? data.id : '0' + data.id}.
-		</span>
-		<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
-			{data.name}
-		</h1>
-		<hr class="-mb-3 xl:mb-0 h-px min-w-20 grow self-end bg-theme-black" />
+	<div class="flex flex-col gap-6 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 md:pt-0 xl:pt-4">
+		<div class="flex items-baseline gap-2 xl:gap-4 xl:left-0">
+			<span class="self-start font-metal text-xl leading-[85%] md:self-end md:text-3.5xl xl:self-auto xl:text-4.5xl">
+				{data.id > 9 ? data.id : '0' + data.id}.
+			</span>
+			<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
+				{data.name}
+			</h1>
+			<hr class="-mb-3 xl:mb-0 h-px min-w-20 grow self-end bg-theme-black" />
+		</div>
+		<div class="flex gap-2 left-0">
+			<a href=../../ class="text-xs xl:text-[1rem] leading-[105%]">Accueil</a>
+			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
+			<a href=../projects class="text-xs xl:text-[1rem] leading-[105%]">Projets</a>
+			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
+			<a href=zs class="text-xs xl:text-[1rem] leading-[105%]">{data.name}</a>
+		</div>
 	</div>
 
   	<!-- CONTENU SCROLLABLE -->
-  	<div class="flex flex-col gap-20 xl:flex-row xl:w-fit xl:h-full xl:items-end xl:px-6 xl:pt-30 xl:pb-8 xl:gap-50">
+  	<div class="flex flex-col gap-20 xl:flex-row xl:w-fit xl:h-full xl:min-h-0 xl:items-end xl:px-6 xl:pt-20 xl:pb-8 xl:gap-50">
 		<!-- CONTEXT -->
 		<div class="flex flex-col gap-16 xl:flex-row xl:h-full xl:w-[1000px] xl:shrink-0 xl:relative">
 
@@ -108,9 +117,17 @@
 		{/if}
 
 		<!-- GRID IMAGES -->
-		<div class="grid gap-2 bg-theme-black p-2 md:grid-cols-2 xl:grid-cols-2 xl:grid-rows-2 xl:h-full xl:w-auto xl:shrink-0">
-			{#each data.images as image}
-				<img src={image.src} alt={image.alt} class="aspect-video rounded object-cover xl:h-full xl:w-auto" />
+		<div class="grid gap-2 bg-theme-black p-2 md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:grid-rows-2 xl:h-full xl:w-auto xl:shrink-0">
+			{#each data.images as image, i}
+				<img
+					src={image.src}
+					alt={image.alt}
+					class="rounded
+						{i === 0 ? 'xl:col-start-1 xl:row-start-1 xl:row-span-2 xl:h-full xl:w-auto' : ''}
+						{i === 1 ? 'xl:col-start-2 xl:row-start-1 xl:h-full xl:w-auto' : ''}
+						{i === 2 ? 'xl:col-start-2 xl:row-start-2 xl:h-full xl:w-auto' : ''}
+						{i === 3 ? 'xl:col-start-3 xl:row-start-1 xl:row-span-2 xl:h-full xl:w-auto' : ''}"
+				/>
 			{/each}
 		</div>
 

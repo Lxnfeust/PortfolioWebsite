@@ -6,7 +6,7 @@
 	"title": "Valeria, une expérience immersive en VR.",
 	"description": "Les différents conflits qui déchirent notre monde font sombrer certaines personnes courageuses dans l'oubli. Pour essayer d’y remédier, nous avons conçu une expérience interactive qui mélange 3D et Réalité Virtuelle. Nous avons voulu raconter l'histoire d'une réfugiée Ukrainienne (à travers son témoignage) qui a du fuir son pays à cause de la guerre.",
 	"presentation_image": {
-		"src": "/images/valeria.jpg",
+		"src": "/images/pr_valeria/cover_valeria.jpg",
 		"alt": "Image de présentation du projet Valeria"
 	},
 	"project_infos": {
@@ -26,19 +26,19 @@
 	},
 	"images": [
 		{
-			"src": "/images/valeria.jpg",
+			"src": "/images/pr_valeria/cover_valeria.jpg",
 			"alt": "Image 1 du projet Valeria"
 		},
 		{
-			"src": "/images/valeria.jpg",
+			"src": "/images/pr_valeria/cover_valeria.jpg",
 			"alt": "Image 2 du projet Valeria"
 		},
 		{
-			"src": "/images/valeria.jpg",
+			"src": "/images/pr_valeria/cover_valeria.jpg",
 			"alt": "Image 3 du projet Valeria"
 		},
 		{
-			"src": "/images/valeria.jpg",
+			"src": "/images/pr_valeria/cover_valeria.jpg",
 			"alt": "Image 4 du projet Valeria"
 		}
 	]

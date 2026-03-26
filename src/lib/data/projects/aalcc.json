@@ -6,7 +6,7 @@
 	"title": "All About Lily Chou-Chou, site internet expérience.",
 	"description": "Ce site internet fictif est une expérience que j’ai voulu réaliser en hommage à mon film préféré : All About Lily Chou-Chou. Pour le mener à bien, je me suis fortement inspiré de l’esthétique “retro internet” qui correspond à la date de tournage et parution du film.",
 	"presentation_image": {
-		"src": "/images/aalcc.jpg",
+		"src": "/images/pr_aalcc/cover_aalcc.jpg",
 		"alt": "Image de présentation du projet Nuit des musées"
 	},
 	"project_infos": {
@@ -20,25 +20,22 @@
 			}
 		]
 	},
-	"poster": {
-		"src": "",
-		"alt": ""
-	},
+	
 	"images": [
 		{
-			"src": "/images/aalcc.jpg",
+			"src": "/images/pr_aalcc/cover_aalcc.jpg",
 			"alt": "Image 1 du projet AALCC"
 		},
 		{
-			"src": "/images/aalcc.jpg",
+			"src": "/images/pr_aalcc/cover_aalcc.jpg",
 			"alt": "Image 2 du projet AALCC"
 		},
 		{
-			"src": "/images/aalcc.jpg",
+			"src": "/images/pr_aalcc/cover_aalcc.jpg",
 			"alt": "Image 3 du projet AALCC"
 		},
 		{
-			"src": "/images/aalcc.jpg",
+			"src": "/images/pr_aalcc/cover_aalcc.jpg",
 			"alt": "Image 4 du projet AALCC"
 		}
 	]

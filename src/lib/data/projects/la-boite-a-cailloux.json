@@ -6,7 +6,7 @@
 	"title": "Modélisation 3D de pierres précieuses.",
 	"description": "Ce projet est un site internet fictif dont le déroulé a été simulé en motion design. Pour le mener à bien, j’ai décidé de modéliser moi-même en 3D une géode d’améthyste et un “packshot”. ",
 	"presentation_image": {
-		"src": "/images/la_boite_a_cailloux.jpg",
+		"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 		"alt": "Image de présentation du projet La boîte à cailloux"
 	},
 	"project_infos": {
@@ -15,24 +15,24 @@
 		"links": []
 	},
 	"poster": {
-		"src": "/images/la_boite_a_cailloux.jpg",
+		"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 		"alt": "Poster du projet La boîte à cailloux"
 	},
 	"images": [
 		{
-			"src": "/images/la_boite_a_cailloux.jpg",
+			"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 			"alt": "Image 1 du projet La boîte à cailloux"
 		},
 		{
-			"src": "/images/la_boite_a_cailloux.jpg",
+			"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 			"alt": "Image 2 du projet La boîte à cailloux"
 		},
 		{
-			"src": "/images/la_boite_a_cailloux.jpg",
+			"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 			"alt": "Image 3 du projet La boîte à cailloux"
 		},
 		{
-			"src": "/images/la_boite_a_cailloux.jpg",
+			"src": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 			"alt": "Image 4 du projet La boîte à cailloux"
 		}
 	]

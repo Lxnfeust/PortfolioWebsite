@@ -6,67 +6,67 @@
 			title: 'Nuit des Musées',
 			year: 2024,
 			link: '/projects/nuit-des-musees',
-			image: '/images/nuit_des_musees.jpg'
+			image: '/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg',
 		},
 		{
 			title: 'A.A.L.C.C',
 			year: 2025,
 			link: '/projects/aalcc',
-			image: '/images/aalcc.jpg'
+			image: '/images/pr_aalcc/cover_aalcc.jpg',
 		},
 		{
 			title: 'Série Motion',
 			year: 2026,
 			link: '/projects/serie-motion',
-			image: '/images/serie_motion.jpg'
+			image: '/images/pr_serie_motion/cover_serie_motion.jpg',
 		},
 		{
 			title: 'Château Lagrange',
 			year: 2025,
 			link: '/projects/chateau-lagrange',
-			image: '/images/chateau_lagrange.jpg'
+			image: '/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg',
 		},
 		{
 			title: 'Showreel',
 			year: 2024,
 			link: '/projects/showreel',
-			image: '/images/showreel.jpg'
+			image: '/images/pr_showreel/cover_showreel.jpg',
 		},
 		{
 			title: 'Bacchanight',
 			year: 2023,
 			link: '/projects/bacchanight',
-			image: '/images/bacchanight.jpg'
+			image: '/images/pr_bacchanight/cover_bacchanight.jpg',
 		},
 		{
 			title: 'Valeria',
 			year: 2024,
 			link: '/projects/valeria',
-			image: '/images/valeria.jpg'
+			image: '/images/pr_valeria/cover_valeria.jpg',
 		},
 		{
 			title: 'Sapio Spirits',
 			year: 2026,
 			link: '/projects/sapio-spirits',
-			image: '/images/sapio_spirits.jpg'
+			image: '/images/pr_sapio_spirits/cover_sapio_spirits.jpg',
 		},
 		{
 			title: 'Domaine Giscours',
 			year: 2026,
 			link: '/projects/domaine-giscours',
-			image: '/images/domaine_giscours.jpg'
+			image: '/images/pr_domaine_giscours/cover_domaine_giscours.jpg',
 		},
 		{
 			title: 'La Boîte à Cailloux',
 			year: 2024,
 			link: '/projects/la-boite-a-cailloux',
-			image: '/images/la_boite_a_cailloux.jpg'
+			image: '/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg',
 		},
 		{
 			title: 'Bikers au Grand Coeur',
 			year: 2024,
 			link: '/projects/bikers-au-grand-coeur',
-			image: '/images/bikers_au_grand_coeur.jpg'
+			image: '/images/pr_bikers_au_grand_coeur/cover_bikers_au_grand_coeur.jpg',
 		}
 	];
 </script>
@@ -102,7 +102,7 @@
 			</div>
 
 			<!-- Index -->
-			<div class="relative z-20 flex max-h-full flex-1 flex-col gap-20 xl:ml-[4rem] 2xl:ml-[8rem]">
+			<div class="relative z-20 flex max-h-full flex-1 flex-col gap-20 mt-[2rem] xl:ml-[4rem] 2xl:ml-[8rem]">
 				{#each projects as project, i (i)}
 					<a
 						onmouseenter={() => (imageCover = project.image)}

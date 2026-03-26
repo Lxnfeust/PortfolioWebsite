@@ -6,7 +6,7 @@
 	"title": "Château lagrange, collection héritage.",
 	"description": "Dans le cadre de mon alternance chez Favoreat Design, j’ai pu contribuer à la création et mise en place d’un évènement qui mettait en avant la collection Héritage par Château Lagrange. J’ai pu réaliser le site internet et la brochure qui comportaient les informations clés sur cette collection inédite.",
 	"presentation_image": {
-		"src": "/images/chateau-lagrange.jpg",
+		"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
 		"alt": "Image de présentation du projet Château Lagrange"
 	},
 	"project_infos": {
@@ -26,19 +26,19 @@
 	},
 	"images": [
 		{
-			"src": "/images/chateau-lagrange.jpg",
+			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
 			"alt": "Image 1 du projet Château Lagrange"
 		},
 		{
-			"src": "/images/chateau-lagrange.jpg",
+			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
 			"alt": "Image 2 du projet Château Lagrange"
 		},
 		{
-			"src": "/images/chateau-lagrange.jpg",
+			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
 			"alt": "Image 3 du projet Château Lagrange"
 		},
 		{
-			"src": "/images/chateau-lagrange.jpg",
+			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
 			"alt": "Image 4 du projet Château Lagrange"
 		}
 	]

@@ -6,7 +6,7 @@
 	"title": "une série de visuels en motion design.",
 	"description": "Une série de visuels courts réalisés sur le logiciel Cavalry. J’ai choisi pour ce projet de refléter l’ambiance et mon ressenti à l’écoute de la discographie d’un artiste que j’affectionne : 1000 Eyes.",
 	"presentation_image": {
-		"src": "/images/serie_motion.jpg",
+		"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
 		"alt": "Image de présentation du projet Série motion"
 	},
 	"project_infos": {
@@ -20,19 +20,19 @@
 	},
 	"images": [
 		{
-			"src": "/images/serie_motion.jpg",
+			"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
 			"alt": "Image 1 du projet Série motion"
 		},
 		{
-			"src": "/images/serie_motion.jpg",
+			"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
 			"alt": "Image 2 du projet Série motion"
 		},
 		{
-			"src": "/images/serie_motion.jpg",
+			"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
 			"alt": "Image 3 du projet Série motion"
 		},
 		{
-			"src": "/images/serie_motion.jpg",
+			"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
 			"alt": "Image 4 du projet Série motion"
 		}
 	]

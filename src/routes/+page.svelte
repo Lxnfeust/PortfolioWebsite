@@ -7,11 +7,11 @@
 			domain: 'Interactive exp.',
 			images: [
 				{
-					src: '/images/la_nuit_des_musees.jpg',
+					src: '/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg',
 					alt: 'Nuit des Musées - Image 1'
 				},
 				{
-					src: '/images/la_nuit_des_musees.jpg',
+					src: '/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg',
 					alt: 'Nuit des Musées - Image 2'
 				}
 			],
@@ -27,11 +27,11 @@
 			domain: 'Website',
 			images: [
 				{
-					src: '/images/aalcc.jpg',
+					src: '/images/pr_aalcc/cover_aalcc.jpg',
 					alt: 'AALCC - Image 1'
 				},
 				{
-					src: '/images/aalcc.jpg',
+					src: '/images/pr_aalcc/cover_aalcc.jpg',
 					alt: 'AALCC - Image 2'
 				}
 			],
@@ -47,11 +47,11 @@
 			domain: 'Motion design',
 			images: [
 				{
-					src: '/images/serie_motion.jpg',
+					src: '/images/pr_serie_motion/cover_serie_motion.jpg',
 					alt: 'Serie motion - Image 1'
 				},
 				{
-					src: '/images/serie_motion.jpg',
+					src: '/images/pr_serie_motion/cover_serie_motion.jpg',
 					alt: 'Serie motion - Image 2'
 				}
 			],
@@ -67,11 +67,11 @@
 			domain: 'Interactive exp.',
 			images: [
 				{
-					src: '/images/bacchanight.jpg',
+					src: '/images/pr_bacchanight/cover_bacchanight.jpg',
 					alt: 'Bacchanight - Image 1'
 				},
 				{
-					src: '/images/bacchanight.jpg',
+					src: '/images/pr_bacchanight/cover_bacchanight.jpg',
 					alt: 'Bacchanight - Image 2'
 				}
 			],

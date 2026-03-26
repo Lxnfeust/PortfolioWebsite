@@ -6,7 +6,7 @@
 	"title": "PAGE en cours de construction.",
 	"description": "S’il-vous-plaît, revenez plus tard.",
 	"presentation_image": {
-		"src": "/images/la_nuit_des_musees.jpg",
+		"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
 		"alt": "Image de présentation du projet Nuit des musées"
 	},
 	"project_infos": {
@@ -26,19 +26,19 @@
 	},
 	"images": [
 		{
-			"src": "",
+			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
 			"alt": ""
 		},
 		{
-			"src": "",
+			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
 			"alt": ""
 		},
 		{
-			"src": "",
+			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
 			"alt": ""
 		},
 		{
-			"src": "",
+			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
 			"alt": ""
 		}
 	]
