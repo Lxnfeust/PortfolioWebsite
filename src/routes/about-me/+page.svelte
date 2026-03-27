@@ -4,7 +4,7 @@
 			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl">
 				D.
 			</span>
-			<h1 class="xl:leading-[100%] 2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
+			<h1 class="xl:leading-[100%] 2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[9rem]">
 				À propos de moi
 			</h1>
 			<hr class="h-px min-w-px flex-1 bg-black" />

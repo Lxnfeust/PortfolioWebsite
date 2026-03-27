@@ -19,17 +19,17 @@
 		>Fermer</button
 	>
 	<div class="flex justify-between border-y border-theme-black py-4">
-		<span class="leading-[105%] font-bold uppercase">Mattéo</span>
+		<span class="leading-[105%] font-bold uppercase text-xl">Mattéo</span>
 		<span class="leading-[105%] font-bold uppercase">Lambert</span>
 	</div>
 	<div class="flex flex-col gap-16">
 		<nav>
-			<ul class="flex flex-col gap-4">
+			<ul class="flex flex-col gap-2 md:gap-4">
 				{#each navItems as navItem, i (i)}
 					<li>
 						<a href={navItem.href} class="flex items-end gap-2"
 							><span class="text-xl font-medium">{navItem.number}.</span><span
-								class="translate-x-0 font-amiri text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
+								class="translate-x-0 font-amiri text-[2.25rem] md:text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
 								>{navItem.name}</span
 							></a
 						>

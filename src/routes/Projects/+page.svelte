@@ -72,14 +72,22 @@
 </script>
 
 <div class="mx-8 flex h-full min-h-0 flex-1 flex-col gap-6 overflow-hidden">
-	<div class="pointer-events-none sticky flex items-baseline gap-2 xl:gap-4">
-		<span class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]">
-			B.
-		</span>
-		<h1 class="xl:leading-[100%] 2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
-			Projets
-		</h1>
-		<hr class="h-px min-w-px flex-1 bg-black" />
+	
+	<div class="flex flex-col gap-6 pointer-events-none sticky items-baseline min-w-fit w-full">
+		<div class="flex items-baseline gap-2 xl:gap-4 xl:left-0 w-full">
+			<span class="flex font-metal text-[1.25rem] leading-[85%] uppercase md:text-[2rem] xl:text-[2.5rem]">
+				B.
+			</span>
+			<h1 class="xl:leading-[100%] 2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[7rem] 2xl:text-[9rem]">
+				Projets
+			</h1>
+			<hr class="-mb-3 xl:mb-0 h-px grow self-end bg-theme-black border-none" />
+		</div>
+		<div class="flex gap-2 left-0">
+			<a href=../../ class="text-xs xl:text-[1rem] leading-[105%]">Accueil</a>
+			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
+			<a href=../projects class="text-xs xl:text-[1rem] leading-[105%]">Projets</a>
+		</div>
 	</div>
 
 	<div class="flex max-h-full min-h-0 w-full flex-1 justify-between">

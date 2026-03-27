@@ -47,7 +47,7 @@
 			<span class="self-start font-metal text-xl leading-[85%] md:self-end md:text-3.5xl xl:self-auto xl:text-4.5xl">
 				{data.id > 9 ? data.id : '0' + data.id}.
 			</span>
-			<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] 2xl:text-[10rem]">
+			<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[7rem] 2xl:text-[9rem]">
 				{data.name}
 			</h1>
 			<hr class="-mb-3 xl:mb-0 h-px min-w-20 grow self-end bg-theme-black" />
@@ -62,9 +62,9 @@
 	</div>
 
   	<!-- CONTENU SCROLLABLE -->
-  	<div class="flex flex-col gap-20 xl:flex-row xl:w-fit xl:h-full xl:min-h-0 xl:items-end xl:px-6 xl:pt-20 xl:pb-8 xl:gap-50">
+  	<div class="flex flex-col gap-20 xl:flex-row xl:w-fit xl:h-full xl:min-h-0 xl:items-end xl:px-6 xl:pt-14 xl:pb-8 xl:gap-50">
 		<!-- CONTEXT -->
-		<div class="flex flex-col gap-16 xl:flex-row xl:h-full xl:w-[1000px] xl:shrink-0 xl:relative">
+		<div class="flex flex-col gap-16 xl:flex-row xl:h-full xl:w-[800px] 2xl:w-[1000px] xl:shrink-0 xl:relative">
 
 			<span class="font-metal text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:absolute xl:left-0 xl:bottom-0">{data.year}</span>
 
@@ -83,12 +83,23 @@
 		</div>
 
 		<!-- COVER -->
-		<img
-			src={data.presentation_image.src}
-			alt={data.presentation_image.alt}
-			class="w-full rounded xl:h-full xl:w-auto xl:max-w-none xl:object-cover"
-		/>
-
+		{#if data.presentation_image.src.match(/\.(mp4|webm|ogg)$/i)}
+			<video
+				src={data.presentation_image.src}
+				autoplay
+				loop
+				muted
+				playsinline
+				class="w-full rounded xl:h-full xl:w-auto xl:max-w-none xl:object-cover"
+			></video>
+			{:else}
+			<img
+				src={data.presentation_image.src}
+				alt={data.presentation_image.alt}
+				class="w-full rounded xl:h-full xl:w-auto xl:max-w-none xl:object-cover"
+			/>
+		{/if}
+		
 		<!-- MORE INFOS -->
 		<div class="flex flex-col gap-4 xl:w-110 xl:shrink-0 xl:h-full xl:relative xl:justify-center">
 			<h4 class="text-xl leading-[105%] font-medium uppercase">{data.project_infos.title}</h4>
