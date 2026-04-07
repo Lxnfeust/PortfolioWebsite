@@ -144,10 +144,11 @@
 		'/images/laboratory/t-shirt.jpg'
 	];
 	const imgURLArrayLength = imgURLArray ? imgURLArray.length : -1;
-	const visibleRowNum = 3;
-	const visibleImgNum = 5;
-	const renderRowNum = visibleRowNum + 5;
-	const renderImgNum = visibleImgNum + 5;
+
+	const maxVisibleImgNum = 5;
+	const maxVisibleRowNum = 3;
+	const renderRowNum = maxVisibleRowNum + 5;
+	const renderImgNum = maxVisibleImgNum + 5;
 	const headerHeight = 72;
 
 	const useInertia = true;
@@ -170,6 +171,15 @@
 		maskElem,
 		draggables = [];
 
+	function getVisibleCounts() {
+		if (innerWidth < 480) return { rows: 4, imgs: 1 };
+		if (innerWidth < 768) return { rows: 4, imgs: 1 };
+		if (innerWidth < 1000) return { rows: 4, imgs: 2 };
+		if (innerWidth < 1400) return { rows: 4, imgs: 3 };
+		if (innerWidth < 1920) return { rows: 4, imgs: 3 };
+		return { rows: 4, imgs: 3 };
+	}
+
 	function updateMaskBounds() {
 		if (!maskElem) return;
 		gsap.set(maskElem, {
@@ -179,28 +189,38 @@
 	}
 
 	function createImageGrid() {
-		for (let y = 0; y < renderRowNum; y++) {
-			let row = document.createElement('div');
-			row.className = rowClass;
-			for (let x = 0; x < renderImgNum; x++) {
-				let image = document.createElement('div');
-				let media = document.createElement('img');
-				image.className = imageClass;
-				media.className = imageMediaClass;
-				media.src = imgURLArray[(y * renderImgNum + x) % imgURLArrayLength];
-				media.alt = '';
-				media.draggable = false;
-				image.appendChild(media);
-				row.appendChild(image);
-			}
+    // Génère un tableau mélangé de façon déterministe
+    const totalCells = renderRowNum * renderImgNum;
+    const shuffled = Array.from({ length: totalCells }, (_, i) => i % imgURLArrayLength);
+
+    // Mélange de Fisher-Yates avec seed fixe pour éviter le rechargement à chaque resize
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor((Math.sin(i * 9301 + 49297) / 233280 + 1) * i);
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    for (let y = 0; y < renderRowNum; y++) {
+        let row = document.createElement('div');
+        row.className = rowClass;
+        for (let x = 0; x < renderImgNum; x++) {
+            let image = document.createElement('div');
+            let media = document.createElement('img');
+            image.className = imageClass;
+            media.className = imageMediaClass;
+            media.src = imgURLArray[shuffled[y * renderImgNum + x]]; // ← ici
+            media.alt = '';
+            media.draggable = false;
+            image.appendChild(media);
+            row.appendChild(image);
+        }
 			document.querySelector(containerSelector).appendChild(row);
 
 			imgRep.push(gsap.utils.toArray(row.querySelectorAll(imageSelector)));
 		}
 
-		((rows = document.querySelectorAll(rowSelector)),
-			(imgMidIndex = Math.floor(renderImgNum / 2)),
-			(rowMidIndex = Math.floor(renderRowNum / 2)));
+		rows = document.querySelectorAll(rowSelector);
+		imgMidIndex = Math.floor(renderImgNum / 2);
+		rowMidIndex = Math.floor(renderRowNum / 2);
 	}
 
 	function createMask() {
@@ -219,11 +239,12 @@
 	}
 
 	function resize() {
+		const { rows: visibleRowNum, imgs: visibleImgNum } = getVisibleCounts();
 		const viewportHeight = Math.max(innerHeight - headerHeight, 0);
 
 		winMidX = innerWidth / 2;
 		winMidY = headerHeight + viewportHeight / 2;
-		gutter = Math.max(innerWidth * 0.02, 12);
+		gutter = Math.max(innerWidth * 0.02, 8);
 		boxWidth = (innerWidth - gutter * (visibleImgNum + 1)) / visibleImgNum;
 		boxHeight = (viewportHeight - gutter * (visibleRowNum + 1)) / visibleRowNum;
 		horizSpacing = boxWidth + gutter;
@@ -281,10 +302,7 @@
 		gsap.set(imageMediaSelector, {
 			width: '100%',
 			height: '100%',
-			maxWidth: '160px',
-			maxHeight: '100%',
 			objectFit: 'contain',
-			pointerEvents: 'none'
 		});
 
 		gsap.set(rowSelector, {
