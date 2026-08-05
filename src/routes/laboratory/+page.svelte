@@ -2,9 +2,8 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import pkg from "gsap/Draggable";
-	const { Draggable } = pkg;
 	import pkg from "gsap/InertiaPlugin";
-	const { InertiaPlugin } = pkg;
+	const { Draggable, InertiaPlugin } = pkg;
 
 	console.clear();
 
