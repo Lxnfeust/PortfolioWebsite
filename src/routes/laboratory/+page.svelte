@@ -3,7 +3,8 @@
 	import { gsap } from 'gsap';
 	import pkg from "gsap/Draggable";
 	const { Draggable } = pkg;
-	import { InertiaPlugin } from 'gsap/InertiaPlugin';
+	import pkg from "gsap/InertiaPlugin";
+	const { InertiaPlugin } = pkg;
 
 	console.clear();
 
