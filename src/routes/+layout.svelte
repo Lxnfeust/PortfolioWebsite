@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Menu from '$lib/components/Menu.svelte';
+	import Cursor from '$lib/components/Cursor.svelte';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 
@@ -78,6 +79,9 @@
 	<main class="mt-18 h-full max-h-[calc(100vh-72px)] grow">
 		{@render children()}
 	</main>
+
+	<Cursor />
+	
 </div>
 
 

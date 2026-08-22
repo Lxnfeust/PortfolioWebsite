@@ -1,8 +1,9 @@
 {
-	"id": "2",
+	"id": "3",
 	"slug": "aalcc",
 	"year": "2025",
 	"name": "AALCC",
+	"cover": "/images/pr_aalcc/cover_aalcc.jpg",
 	"title": "All About Lily Chou-Chou, site internet expérience.",
 	"description": "Ce site internet fictif est une expérience que j’ai voulu réaliser en hommage à mon film préféré : All About Lily Chou-Chou. Pour le mener à bien, je me suis fortement inspiré de l’esthétique “retro internet” qui correspond à la date de tournage et parution du film.",
 	"presentation_image": {

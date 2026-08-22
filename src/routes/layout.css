@@ -1,13 +1,10 @@
 @import 'tailwindcss';
 
 @font-face {
-	font-family: 'metal';
-	src: url('$lib/assets/fonts/Metal/Metal-Regular.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'amiri';
-	src: url('$lib/assets/fonts/Amiri/Amiri-Italic.ttf') format('truetype');
+	font-family: 'diolce';
+	src: url('$lib/assets/fonts/Diolce/Diolce-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
@@ -18,8 +15,7 @@
 
 @theme {
 	--font-sans: 'bricolage-grotesque';
-	--font-amiri: 'amiri';
-	--font-metal: 'metal';
+	--font-diolce: 'diolce';
 	--color-theme-white: #eeeded;
 	--color-theme-black: rgb(21, 21, 21);
 	--color-theme-black-opacity: rgba(21, 21, 21, 0.1);
@@ -31,6 +27,41 @@
 	--text-10xl: 160px;
 
 	--breakpoint-3xl: 120rem;
+}
+
+.cursor-dot {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background-color: var(--color-theme-black);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition:
+		width 0.2s ease,
+		height 0.2s ease;
+	pointer-events: none;
+	z-index: 200;
+	opacity: 0;
+}
+
+.cursor-dot--hover {
+	width: 18px;
+	height: 18px;
+}
+
+@media (pointer: fine) {
+	body,
+	a,
+	button {
+		cursor: none;
+	}
+
+	.cursor-dot {
+		display: block;
+	}
 }
 
 /* ------------------------------------------ BODY ------------------------------------------ */

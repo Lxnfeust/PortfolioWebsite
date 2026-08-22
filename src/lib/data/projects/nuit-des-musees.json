@@ -1,8 +1,9 @@
 {
-	"id": "1",
+	"id": "2",
 	"slug": "nuit-des-musees",
 	"year": "2024",
 	"name": "Nuit des musées",
+	"cover": "/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg",
 	"title": "La nuit européenne des musées au Musba.",
 	"description": "Le but de ce projet était de mettre à disposition et garantir la maintenance d’une tablette interactive tactile au Musée des Beaux-Arts de Bordeaux. Sur cette même tablette, nous avons créé de multiples expériences en lien avec des œuvres exposées. Pour la partie me concernant, j’ai proposé à mon groupe de travailler sur une expérience web 3D qui se base sur des “maps” de reliefs et reflets qui simulent le déplacement d’une source de lumière comme si elle provenait du tableau original.",
 	"presentation_image": {

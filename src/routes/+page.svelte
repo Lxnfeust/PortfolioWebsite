@@ -1,298 +1,188 @@
 <script lang="ts">
-	const projects: Project[] = [
-		{
-			title: 'Nuit des Musées',
-			role: '3D',
-			year: '2024',
-			domain: 'Interactive exp.',
-			images: [
-				{
-					src: '/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg',
-					alt: 'Nuit des Musées - Image 1'
-				},
-				{
-					src: '/images/pr_nuit_des_musees/cover_nuit_des_musees.jpg',
-					alt: 'Nuit des Musées - Image 2'
-				}
-			],
-			link: {
-				url: '/projects/nuit-des-musees',
-				target: ''
-			}
-		},
-		{
-			title: 'AALCC',
-			role: 'DA',
-			year: '2025',
-			domain: 'Website',
-			images: [
-				{
-					src: '/images/pr_aalcc/cover_aalcc.jpg',
-					alt: 'AALCC - Image 1'
-				},
-				{
-					src: '/images/pr_aalcc/cover_aalcc.jpg',
-					alt: 'AALCC - Image 2'
-				}
-			],
-			link: {
-				url: '/projects/aalcc',
-				target: ''
-			}
-		},
-		{
-			title: 'Visual series',
-			role: 'Design',
-			year: '2025',
-			domain: 'Motion design',
-			images: [
-				{
-					src: '/images/pr_serie_motion/cover_serie_motion.jpg',
-					alt: 'Serie motion - Image 1'
-				},
-				{
-					src: '/images/pr_serie_motion/cover_serie_motion.jpg',
-					alt: 'Serie motion - Image 2'
-				}
-			],
-			link: {
-				url: '/projects/serie-motion',
-				target: ''
-			}
-		},
-		{
-			title: 'Bacchanight',
-			role: 'DA',
-			year: '2023',
-			domain: 'Interactive exp.',
-			images: [
-				{
-					src: '/images/pr_bacchanight/cover_bacchanight.jpg',
-					alt: 'Bacchanight - Image 1'
-				},
-				{
-					src: '/images/pr_bacchanight/cover_bacchanight.jpg',
-					alt: 'Bacchanight - Image 2'
-				}
-			],
-			link: {
-				url: '/projects/bacchanight',
-				target: ''
-			}
-		}
+	import { onMount, onDestroy } from 'svelte';
+	import gsap from 'gsap';
+	import { projects } from '$lib/data/projects';
+
+	// --- Vitrine "Projets sélectionnés" ---
+	const featured = [projects.haeon, projects.nuitDesMusees, projects.aalcc, projects.serieMotion];
+
+	let activeIndex = $state(0);
+	const active = $derived(featured[activeIndex]);
+
+	function goPrev() {
+		activeIndex = (activeIndex - 1 + featured.length) % featured.length;
+	}
+	function goNext() {
+		activeIndex = (activeIndex + 1) % featured.length;
+	}
+
+	// --- Teaser Laboratoire : image flottante qui suit le curseur ---
+	const previewImages = [
+		'/images/laboratory/genshin.png',
+		'/images/laboratory/humanoid.png',
+		'/images/laboratory/kernel.jpg',
+		'/images/laboratory/nuances.png',
+		'/images/laboratory/sample.jpg',
+		'/images/laboratory/spike.png',
+		'/images/laboratory/t-shirt.jpg'
 	];
 
-	interface Project {
-		title: string;
-		role: string;
-		year: string;
-		domain: string;
-		images: {
-			src: string;
-			alt: string;
-		}[];
-		link?: {
-			url: string;
-			target: string;
-		};
+	let previewEl: HTMLDivElement;
+	let previewImg: HTMLImageElement;
+	let showPreview = $state(false);
+	let quickX: gsap.QuickToFunc;
+	let quickY: gsap.QuickToFunc;
+	let shuffleInterval: ReturnType<typeof setInterval> | undefined;
+
+	onMount(() => {
+		gsap.set(previewEl, { xPercent: -50, yPercent: -50 });
+		quickX = gsap.quickTo(previewEl, 'x', { duration: 0.5, ease: 'power3' });
+		quickY = gsap.quickTo(previewEl, 'y', { duration: 0.5, ease: 'power3' });
+	});
+
+	onDestroy(() => {
+		if (shuffleInterval) clearInterval(shuffleInterval);
+	});
+
+	function pickRandomImage() {
+		if (!previewImg) return;
+		previewImg.src = previewImages[Math.floor(Math.random() * previewImages.length)];
+	}
+
+	function handlePreviewEnter() {
+		pickRandomImage();
+		showPreview = true;
+		shuffleInterval = setInterval(pickRandomImage, 800);
+	}
+
+	function handlePreviewLeave() {
+		showPreview = false;
+		if (shuffleInterval) clearInterval(shuffleInterval);
+	}
+
+	function handlePreviewMove(e: MouseEvent) {
+		quickX(e.clientX);
+		quickY(e.clientY);
 	}
 </script>
 
-{#snippet project(project)}
-	{#if project.link}
-		<a
-			href={project.link.url}
-			target={project.link.target}
-			class="group relative flex w-full justify-center text-theme-black transition duration-700 hover:bg-theme-black hover:text-theme-white"
-		>
-			<div class="flex w-90 flex-col gap-8 p-4 md:w-140 xl:w-160">
-				<div class="flex justify-between">
-					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Title</p>
-						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.title}
-						</p>
-					</div>
-					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Role</p>
-						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.role}
-						</p>
-					</div>
-				</div>
-				<div class="flex h-30 items-center justify-center gap-6 md:h-50 xl:gap-8">
-					<h3
-						class="font-amiri text-2xl leading-none font-medium uppercase italic opacity-0 transition duration-700 group-hover:opacity-100 md:text-4.5xl xl:text-6.5xl"
-					>
-						{project.title}
-					</h3>
-					<img
-						src={project.images[0].src}
-						alt={project.images[0].alt}
-						class="group absolute left-[calc(50%-80px)] h-30 min-w-30 origin-left -translate-x-1/2 rounded object-cover transition-all duration-700 group-hover:left-4 group-hover:translate-0 group-hover:scale-150 md:left-[calc(50%-130px)] md:h-50 md:min-w-50 xl:h-50 xl:min-w-57.5"
-					/>
-					<img
-						src={project.images[1].src}
-						alt={project.images[1].alt}
-						class="absolute right-[calc(50%-80px)] h-30 min-w-30 origin-right translate-x-1/2 rounded object-cover transition-all duration-700 group-hover:right-4 group-hover:translate-0 group-hover:scale-150 md:right-[calc(50%-130px)] md:h-50 md:min-w-50 xl:h-50 xl:min-w-57.5"
-					/>
-				</div>
-				<div class="flex justify-between">
-					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Année</p>
-						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.year}
-						</p>
-					</div>
-					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Domaine</p>
-						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.domain}
-						</p>
-					</div>
-				</div>
-			</div>
-		</a>
-	{:else}
-		<div
-			class="flex w-full justify-center bg-theme-white text-theme-black transition duration-700 hover:bg-theme-black hover:text-theme-white"
-		>
-			<div class="group flex w-90 flex-col gap-8 p-4 md:w-140 xl:w-160">
-				<div class="flex justify-between">
-					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Titre</p>
-						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.title}
-						</p>
-					</div>
-					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Rôle</p>
-						<p class="text-xl leading-none font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.role}
-						</p>
-					</div>
-				</div>
-				<div class="relative flex h-30 items-center justify-center gap-6 md:h-50 xl:gap-8">
-					<h3
-						class="font-amiri text-2xl leading-none font-medium uppercase italic opacity-0 transition duration-700 group-hover:opacity-100 md:text-[40px] xl:text-[64px]"
-					>
-						{project.title}
-					</h3>
-					<img
-						src={project.images[0].src}
-						alt={project.images[0].alt}
-						class="absolute top-0 left-16 h-30 min-w-30 rounded object-cover transition-all duration-700 group-hover:-left-full md:h-50 md:min-w-50 xl:h-50 xl:min-w-57.5"
-					/>
-					<img
-						src={project.images[1].src}
-						alt={project.images[1].alt}
-						class="absolute top-0 right-16 h-30 min-w-30 rounded object-cover transition-all duration-700 group-hover:right-full md:h-50 md:min-w-50 xl:h-50 xl:min-w-57.5"
-					/>
-				</div>
-				<div class="flex justify-between">
-					<div class="flex flex-col gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Year</p>
-						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.year}
-						</p>
-					</div>
-					<div class="flex flex-col items-end gap-0 xl:flex-row xl:items-start xl:gap-2">
-						<p class="text-xs leading-[105%] uppercase md:text-base xl:mt-1">Domain</p>
-						<p class="text-xl leading-[105%] font-medium uppercase md:text-2xl xl:text-3.5xl">
-							{project.domain}
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	{/if}
-{/snippet}
-
 <div class="container_home px-6 pb-6">
-	<div class="flex h-[calc(100lvh-100px)] flex-col justify-between">
-		<div class="heading flex items-baseline gap-2 xl:gap-4">
-			<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl">
-				A.
-			</span>
-			<h1 class="xl:leading-[100%] 2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[7rem] 2xl:text-[9rem]">
-				Portfolio
-			</h1>
-			<hr class="h-px min-w-px flex-1 bg-black" />
-		</div>
-		<div class="flex flex-col gap-1 md:gap-1 lg:gap-1 xl:gap-1.5">
-			<div class="flex justify-between">
-				<p class="text-base leading-[105%] uppercase md:text-base lg:text-base xl:text-xl">
-					DA Junior
-				</p>
-				<p class="text-base leading-[105%] uppercase md:text-base lg:text-base xl:text-xl">
-					22 ans
-				</p>
-			</div>
-			<div class="flex justify-between">
-				<h2
-					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
-				>
-					Mattéo
-				</h2>
-				<h2
-					class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
-				>
-					Lambert
-				</h2>
-			</div>
-		</div>
-		<div class="flex flex-col items-center gap-16 text-center md:gap-16 lg:gap-16 xl:gap-20">
-			<div class="flex flex-col gap-2">
-				<p class="text-base leading-[105%]">
-					Hello ! Bienvenue sur mon portfolio :) <br />
-					<a href="/about-me" class="font-semibold">Moi c'est Mattéo.</a>
-				</p>
-			</div>
-			<div class="flex flex-col items-center gap-4">
-				<span class="text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl">Scroll</span>
-				<hr class="h-12.5 w-px bg-theme-black" />
-			</div>
+	<!-- HERO -->
+	<div class="flex min-h-[60lvh] flex-col items-center justify-center gap-12 text-center md:min-h-[70lvh] md:gap-16">
+		<h1 class="font-diolce text-[2rem] leading-[105%] uppercase md:text-[3rem] xl:text-[4rem]">
+			Designer &amp; DA Junior
+		</h1>
+		<div class="flex flex-col gap-2">
+			<p class="text-base leading-[105%]">Bonjour et bienvenue sur mon portfolio, moi c'est Mattéo.</p>
+			<p class="text-base leading-[105%]">
+				Designer 360, en éternelle quête de renouvellement de mes moyens d'expression créatifs.
+			</p>
 		</div>
 	</div>
+
+	<hr class="mb-16 h-px w-full bg-theme-black" />
+
 	<div class="flex flex-col gap-16">
 		<div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-0">
-			<h2
-				class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
-			>
+			<h2 class="font-diolce text-3.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
 				Projets sélectionnés
 			</h2>
-			<a href="/projects" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl"
-				>Voir tous les projets&nbsp;→</a
-			>
+			<a href="/projects" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl">
+				Voir tous les projets&nbsp;→
+			</a>
 		</div>
-		<div class="flex flex-col items-center gap-12">
-			{#each projects as proj, i (i)}
-				{@render project(proj)}
-			{/each}
+
+		<!-- Vitrine -->
+		<div class="relative aspect-video w-full overflow-hidden rounded bg-theme-black">
+			<a href={`/projects/${active.slug}`} class="absolute inset-0 block">
+				<img src={active.cover} alt={active.name} class="h-full w-full object-cover" />
+			</a>
+
+			<div class="pointer-events-none absolute inset-0 flex items-end p-4">
+				<div class="pointer-events-auto flex flex-col gap-2">
+					<div class="flex gap-2">
+						{#each featured as project, i (project.slug)}
+							<button
+								onclick={() => (activeIndex = i)}
+								aria-label={`Voir ${project.name}`}
+								class="h-14 w-14 shrink-0 cursor-pointer overflow-hidden rounded transition duration-300 md:h-16 md:w-16"
+								class:ring-2={i === activeIndex}
+								class:ring-theme-white={i === activeIndex}
+								class:opacity-50={i !== activeIndex}
+							>
+								<img src={project.cover} alt="" class="h-full w-full object-cover" />
+							</button>
+						{/each}
+					</div>
+
+					<div class="flex items-stretch overflow-hidden rounded bg-theme-white text-theme-black">
+						<button
+							onclick={goPrev}
+							aria-label="Projet précédent"
+							class="flex w-10 shrink-0 cursor-pointer items-center justify-center text-base"
+						>
+							←
+						</button>
+						<div class="flex items-center gap-6 px-4 py-2">
+							<div class="flex items-baseline gap-2">
+								<span class="text-xs leading-[105%] uppercase">Titre</span>
+								<span class="font-medium leading-none uppercase">{active.name}</span>
+							</div>
+							<div class="flex items-baseline gap-2">
+								<span class="text-xs leading-[105%] uppercase">Année</span>
+								<span class="font-medium leading-none uppercase">{active.year}</span>
+							</div>
+						</div>
+						<button
+							onclick={goNext}
+							aria-label="Projet suivant"
+							class="flex w-10 shrink-0 cursor-pointer items-center justify-center text-base"
+						>
+							→
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-0">
-		<h2
-			class="font-amiri text-3.5xl leading-[85%] uppercase italic md:text-5xl xl:text-7.5xl"
-		>
+
+	<div
+		class="relative flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-0"
+		onmouseenter={handlePreviewEnter}
+		onmouseleave={handlePreviewLeave}
+		onmousemove={handlePreviewMove}
+		role="presentation"
+	>
+		<h2 class="font-diolce text-3.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
 			En voir plus&nbsp;?
 		</h2>
-		<a href="/laboratory" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl"
-			>Visiter le laboratoire&nbsp;→</a
-		>
+		<a href="/laboratory" class="text-base leading-[105%] font-medium uppercase md:mb-1 text-[1rem] md:text-xl">
+			Visiter le laboratoire&nbsp;→
+		</a>
 	</div>
+
 	<div class="flex flex-col items-center gap-6 text-center">
 		<p class="max-w-60 text-base leading-[105%]">
 			Découvrez mes créations spontanées, des projets qui alimentent et font part de mon esprit
 			créatif.
 		</p>
-		<a href="/projects" class="text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"
-			>Découvrir&nbsp;→</a
-		>
+		<a href="/projects" class="text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl">
+			Découvrir&nbsp;→
+		</a>
 	</div>
+
 	<a
 		href="#top"
 		class="flex justify-center border-y py-4 text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"
-		>Remonter la page</a
 	>
+		Remonter la page
+	</a>
+</div>
+
+<div
+	bind:this={previewEl}
+	class="pointer-events-none fixed top-0 left-0 z-40 hidden h-40 w-32 overflow-hidden rounded opacity-0 transition-opacity duration-300 xl:block"
+	class:opacity-100={showPreview}
+>
+	<img bind:this={previewImg} src={previewImages[0]} alt="" class="h-full w-full object-cover" />
 </div>

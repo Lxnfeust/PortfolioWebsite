@@ -44,20 +44,16 @@
 	<!-- TITLE -->
 	<div class="flex flex-col gap-6 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 md:pt-0 xl:pt-4">
 		<div class="flex items-baseline gap-2 xl:gap-4 xl:left-0">
-			<span class="self-start font-metal text-xl leading-[85%] md:self-end md:text-3.5xl xl:self-auto xl:text-4.5xl">
-				{data.id > 9 ? data.id : '0' + data.id}.
-			</span>
-			<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[7rem] 2xl:text-[9rem]">
+			<h1 class="leading-[80%] xl:leading-[100%] 2l:leading-[70%] -mb-10 xl:-mb-9 flex font-diolce text-[2.5rem] uppercase md:text-[4rem] xl:text-[7rem] 2xl:text-[9rem]">
 				{data.name}
 			</h1>
-			<hr class="-mb-3 xl:mb-0 h-px min-w-20 grow self-end bg-theme-black" />
 		</div>
 		<div class="flex gap-2 left-0">
-			<a href=../../ class="text-xs xl:text-[1rem] leading-[105%]">Accueil</a>
+			<a href="/" class="text-xs xl:text-[1rem] leading-[105%]">Accueil</a>
 			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
-			<a href=../projects class="text-xs xl:text-[1rem] leading-[105%]">Projets</a>
+			<a href="/projects" class="text-xs xl:text-[1rem] leading-[105%]">Projets</a>
 			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
-			<a href=zs class="text-xs xl:text-[1rem] leading-[105%]">{data.name}</a>
+			<span class="text-xs xl:text-[1rem] leading-[105%]">{data.name}</span>
 		</div>
 	</div>
 
@@ -66,7 +62,7 @@
 		<!-- CONTEXT -->
 		<div class="flex flex-col gap-16 xl:flex-row xl:h-full xl:w-[800px] 2xl:w-[1000px] xl:shrink-0 xl:relative">
 
-			<span class="font-metal text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:absolute xl:left-0 xl:bottom-0">{data.year}</span>
+			<span class="font-diolce text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:absolute xl:left-0 xl:bottom-0">{data.year}</span>
 
 			<div class="flex flex-col gap-19.5 xl:shrink-0 xl:justify-center xl:w-110 xl:mx-auto">
 				<div class="flex flex-col gap-16 md:flex-row-reverse md:gap-22.5 xl:flex-col">
@@ -116,7 +112,7 @@
 					</div>
 				{/if}
 			</div>
-			<span class="hidden font-amiri text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:flex xl:absolute xl:left-0 xl:bottom-0">Voir Plus :</span>
+			<span class="hidden font-diolce text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:flex xl:absolute xl:left-0 xl:bottom-0">Voir Plus :</span>
 			<span class="hidden leading-[105%] font-medium uppercase xl:flex xl:absolute xl:right-0 xl:bottom-0">{data.name}</span>
 		</div>
 

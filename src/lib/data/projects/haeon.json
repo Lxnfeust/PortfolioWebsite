@@ -1,0 +1,28 @@
+{
+	"id": "1",
+	"slug": "haeon",
+	"year": "2026",
+	"name": "Haeon",
+	"cover": "/images/pr_haeon/cover_haeon.jpg",
+	"title": "PAGE en cours de construction.",
+	"description": "Mon projet de fin d'études arrive bientôt. Revenez plus tard pour découvrir HAEON en détail.",
+	"presentation_image": {
+		"src": "/images/pr_haeon/cover_haeon.jpg",
+		"alt": "Image de présentation du projet Haeon"
+	},
+	"project_infos": {
+		"title": "Bientôt disponible",
+		"description": "Le contenu de ce projet est en cours de finalisation.",
+		"links": []
+	},
+	"poster": {
+		"src": "",
+		"alt": ""
+	},
+	"images": [
+		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" },
+		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" },
+		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" },
+		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" }
+	]
+}

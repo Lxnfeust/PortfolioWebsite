@@ -80,15 +80,9 @@
 	<div class="flex flex-col justify-between gap-40 pb-8">
 		<div class="flex flex-col gap-6">
 			<div class="heading flex items-baseline gap-2 xl:gap-4">
-				<span class="flex font-metal text-xl leading-[85%] uppercase md:text-3.5xl xl:text-4.5xl">
-					D.
-				</span>
-				<h1
-					class="2l:leading-[70%] -mb-9 flex font-amiri text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] xl:leading-[100%] 2xl:text-[9rem]"
-				>
+				<h1 class="2l:leading-[70%] -mb-9 flex font-diolce text-[2.5rem] uppercase md:text-[4rem] xl:text-[8rem] xl:leading-[100%] 2xl:text-[9rem]">
 					À propos de moi
 				</h1>
-				<hr class="h-px min-w-px flex-1 bg-black" />
 			</div>
 			<div class="flex gap-2 text-xs font-medium uppercase">
 				<a href="/" class="leading-[105%]">Accueil</a>

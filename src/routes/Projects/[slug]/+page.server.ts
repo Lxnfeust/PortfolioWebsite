@@ -1,10 +1,13 @@
 import type { PageServerLoad } from './$types';
+import { error } from '@sveltejs/kit';
+import { projects } from '$lib/data/projects';
 
-export const load: PageServerLoad = async ({ params, fetch }) => {
-	const response = await fetch(`/src/lib/data/projects/${params.slug}.json`);
-	console.log('response :', response);
-	if (!response.ok) {
-		throw new Error('Failed to fetch post');
+export const load: PageServerLoad = async ({ params }) => {
+	const project = Object.values(projects).find((p) => p.slug === params.slug);
+
+	if (!project) {
+		error(404, 'Projet introuvable');
 	}
-	return await response.json();
+
+	return project;
 };
