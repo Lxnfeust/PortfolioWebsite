@@ -3,10 +3,14 @@
 	import Cursor from '$lib/components/Cursor.svelte';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import { page } from '$app/state';
 
 	let showMenu: boolean = $state(false);
 
 	let { children } = $props();
+
+	const isProjectPage = $derived(page.route.id === '/projects/[slug]');
+
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
@@ -49,32 +53,6 @@
 		</div>
 	</header>
 	
-	<!-- <header class="header">
-		<div class="header_item">
-			<div class="credits">
-				<span class="text-xl leading-[105%] font-medium uppercase">Mattéo Lambert</span>
-				<span class="text-xl leading-[105%] font-medium uppercase">Portfolio</span>
-			</div>
-		</div>
-		<div class="header_item flex w-full items-center justify-between md:w-[25vw]">
-			<div class="lang_selector">
-				<span class="hidden text-xl leading-[105%] font-medium md:block">LANG :&nbsp;</span>
-				<div class="lang">
-					<span class="text-xl leading-[105%] font-medium uppercase">FR</span>
-					<span class="text-xl leading-[105%] font-medium uppercase">&nbsp;/&nbsp;</span>
-					<span class="text-xl leading-[105%] font-medium uppercase">EN</span>
-				</div>
-			</div>
-			<div class="menu">
-				<button
-					onclick={() => (showMenu = !showMenu)}
-					class="cursor-pointer text-xl leading-[105%] font-medium uppercase underline underline-offset-4"
-					>Menu</button
-				>
-				<Menu bind:showMenu />
-			</div>
-		</div>
-	</header> -->
 	
 	<main class="mt-18 h-full max-h-[calc(100vh-72px)] grow">
 		{@render children()}
@@ -85,6 +63,16 @@
 </div>
 
 
-<div class="fixed inset-0 -z-1 flex h-full w-full items-center justify-center">
-	<img src="/images/emboss_star.png" alt="" class="w-full max-w-3xl object-contain" />
+<div
+	class="fixed inset-0 -z-1 flex h-full w-full items-center md:items-start {isProjectPage
+		? 'md:justify-start'
+		: 'md:justify-center'}"
+>
+	<img
+		src="/images/emboss_star.png"
+		alt=""
+		class="w-full max-w-3xl object-contain md:-mt-16 md:max-w-3xl lg:max-w-4xl xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-5xl {isProjectPage
+			? 'md:-translate-x-1/2'
+			: ''}"
+	/>
 </div>

@@ -1,8 +1,9 @@
 {
-	"id": "10",
+	"id": "20",
 	"slug": "la-boite-a-cailloux",
 	"year": "2025",
 	"name": "La boîte à cailloux",
+	"cover": "/images/pr_la_boite_a_cailloux/cover_la_boite_a_cailloux.jpg",
 	"title": "Modélisation 3D de pierres précieuses.",
 	"description": "Ce projet est un site internet fictif dont le déroulé a été simulé en motion design. Pour le mener à bien, j’ai décidé de modéliser moi-même en 3D une géode d’améthyste et un “packshot”. ",
 	"presentation_image": {

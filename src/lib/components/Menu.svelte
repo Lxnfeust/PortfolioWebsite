@@ -29,7 +29,7 @@
 					<li>
 						<a href={navItem.href} class="flex items-end gap-2"
 							><span class="text-xl font-medium">{navItem.number}.</span><span
-								class="translate-x-0 font-amiri text-[2.25rem] md:text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
+								class="translate-x-0 font-diolce text-[2.25rem] md:text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
 								>{navItem.name}</span
 							></a
 						>

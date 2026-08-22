@@ -26,7 +26,8 @@
 	--text-7\.5xl: 80px;
 	--text-10xl: 160px;
 
-	--breakpoint-3xl: 120rem;
+	--breakpoint-3xl: 120rem; /* 1920px */
+	--breakpoint-4xl: 160rem; /* 2560px, écrans 4K */
 }
 
 .cursor-dot {
@@ -34,9 +35,9 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 8px;
-	height: 8px;
-	background-color: var(--color-theme-black);
+	width: 16px;
+	height: 16px;
+	background-color: var(--color-theme-white);
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 	transition:
@@ -45,11 +46,12 @@
 	pointer-events: none;
 	z-index: 200;
 	opacity: 0;
+	mix-blend-mode: difference;
 }
 
 .cursor-dot--hover {
-	width: 18px;
-	height: 18px;
+	width: 32px;
+	height: 32px;
 }
 
 @media (pointer: fine) {
@@ -152,7 +154,6 @@ body {
 .container_home {
 	display: flex;
 	flex-direction: column;
-	gap: 120px;
 }
 
 /* SECTION Selected Projects */
