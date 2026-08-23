@@ -15,12 +15,12 @@
 >
 	<button
 		onclick={() => (showMenu = !showMenu)}
-		class="cursor-pointer self-end text-xl leading-[105%] font-medium uppercase underline underline-offset-4"
+		class="cursor-pointer self-end text-base xl:text-xl leading-[105%] font-medium uppercase"
 		>Fermer</button
 	>
 	<div class="flex justify-between border-y border-theme-black py-4">
-		<span class="leading-[105%] font-bold uppercase text-xl">Mattéo</span>
-		<span class="leading-[105%] font-bold uppercase">Lambert</span>
+		<span class="leading-[105%] font-bold uppercase text-base xl:text-xl">Mattéo</span>
+		<span class="leading-[105%] font-bold uppercase text-base xl:text-xl">Lambert</span>
 	</div>
 	<div class="flex flex-col gap-16">
 		<nav>
