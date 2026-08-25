@@ -8,7 +8,7 @@
 	"description": "S’il-vous-plaît, revenez plus tard.",
 	"presentation_image": {
 		"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-		"alt": "Image de présentation du projet Nuit des musées"
+		"alt": "Image de présentation du projet Giscours"
 	},
 	"project_infos": {
 		"title": "aa",
@@ -26,21 +26,9 @@
 		"alt": ""
 	},
 	"images": [
-		{
-			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-			"alt": ""
-		},
-		{
-			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-			"alt": ""
-		},
-		{
-			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-			"alt": ""
-		},
-		{
-			"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-			"alt": ""
-		}
+		{ "src": "", "alt": "" },
+		{ "src": "", "alt": "" },
+		{ "src": "", "alt": "" },
+		{ "src": "", "alt": "" }
 	]
 }

@@ -22,25 +22,13 @@
 		]
 	},
 	"poster": {
-		"src": "",
-		"alt": ""
+		"src": "/images/pr_sapio_spirits/prez_sapio_spirits.mp4",
+		"alt": "Présentation vidéo du projet Sapio Spirits"
 	},
 	"images": [
-		{
-			"src": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-			"alt": "Image 1 du projet Sapio spirits"
-		},
-		{
-			"src": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-			"alt": "Image 2 du projet Sapio spirits"
-		},
-		{
-			"src": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-			"alt": "Image 3 du projet Sapio spirits"
-		},
-		{
-			"src": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-			"alt": "Image 4 du projet Sapio spirits"
-		}
+		{ "src": "/images/pr_sapio_spirits/social1_sapio_spirits.mp4", "alt": "Post réseaux sociaux 1 — Sapio Spirits" },
+		{ "src": "/images/pr_sapio_spirits/social2_sapio_spirits.mp4", "alt": "Post réseaux sociaux 2 — Sapio Spirits" },
+		{ "src": "/images/pr_sapio_spirits/social3_sapio_spirits.mp4", "alt": "Post réseaux sociaux 3 — Sapio Spirits" },
+		{ "src": "/images/pr_sapio_spirits/social4_sapio_spirits.mp4", "alt": "Post réseaux sociaux 4 — Sapio Spirits" }
 	]
 }

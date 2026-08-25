@@ -29,21 +29,9 @@
 	},
 	
 	"images": [
-		{
-			"src": "/images/pr_nuit_des_musees/image1_nuit_des_musees.jpg",
-			"alt": "Image 1 du projet Nuit des musées"
-		},
-		{
-			"src": "/images/pr_nuit_des_musees/image2_nuit_des_musees.jpg",
-			"alt": "Image 2 du projet Nuit des musées"
-		},
-		{
-			"src": "/images/pr_nuit_des_musees/image3_nuit_des_musees.jpg",
-			"alt": "Image 3 du projet Nuit des musées"
-		},
-		{
-			"src": "/images/pr_nuit_des_musees/image4_nuit_des_musees.jpg",
-			"alt": "Image 4 du projet Nuit des musées"
-		}
+		{ "src": "/images/pr_nuit_des_musees/image1_nuit_des_musees.jpg", "alt": "Image 1 du projet Nuit des musées" },
+		{ "src": "/images/pr_nuit_des_musees/wip1_nuit_des_musees.mp4", "alt": "Work in progress 1 — Nuit des musées" },
+		{ "src": "/images/pr_nuit_des_musees/wip2_nuit_des_musees.mp4", "alt": "Work in progress 2 — Nuit des musées" },
+		{ "src": "/images/pr_nuit_des_musees/image4_nuit_des_musees.jpg", "alt": "Image 4 du projet Nuit des musées" }
 	]
 }

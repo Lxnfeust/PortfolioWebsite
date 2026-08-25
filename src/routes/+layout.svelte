@@ -1,14 +1,33 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import Menu from '$lib/components/Menu.svelte';
 	import Cursor from '$lib/components/Cursor.svelte';
+	import { headerTheme } from '$lib/stores/headerTheme.svelte';
+	import { localizedHref } from '$lib/i18n';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 
 	let showMenu: boolean = $state(false);
 	let { children } = $props();
 
-	const isProjectPage = $derived(page.route.id === '/projects/[slug]');
+	let headerEl: HTMLElement;
+
+	$effect(() => {
+		page.url.pathname;
+		if (!headerEl) return;
+		return headerTheme.init(headerEl);
+	});
+
+	// ⚠️ le route.id change avec la restructuration : vérifie la valeur exacte
+	// une fois le déplacement fait (console.log(page.route.id) sur une page projet)
+	const isProjectPage = $derived(page.route.id === '/[lang=lang]/projects/[slug]');
+	const isLaboratoryPage = $derived(page.route.id === '/[lang=lang]/laboratory');
+
+	function switchLang(target: 'fr' | 'en') {
+		const path = page.url.pathname.replace(/^\/(fr|en)/, `/${target}`);
+		goto(path);
+	}
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
@@ -22,19 +41,40 @@
 	></div>
 
 	<div class="flex h-full flex-col">
-		
-		<header class="fixed z-50 grid w-full grid-cols-3 items-center px-8 py-6 text-theme-white mix-blend-difference">
-			<div class="flex items-center gap-1 justify-self-start">
-				<button class="cursor-pointer text-base leading-[105%] font-light uppercase md:text-xl">
+		<header
+			bind:this={headerEl}
+			class="fixed z-50 grid w-full grid-cols-3 items-center px-8 py-6 transition-colors duration-300 {headerTheme.theme ===
+			'dark'
+				? 'text-theme-white'
+				: 'text-theme-black'}"
+		>
+			<div class="flex items-center gap-0.5 md:gap-1.5 justify-self-start">
+				<button
+					onclick={() => switchLang('fr')}
+					class="cursor-pointer text-base leading-[105%] font-regular uppercase transition-opacity duration-300 md:text-xl {page
+						.params.lang === 'fr'
+						? 'opacity-100'
+						: 'opacity-50 hover:opacity-100'}"
+				>
 					FR
 				</button>
-				<span class="text-base leading-[105%] font-light md:text-xl">&nbsp;/&nbsp;</span>
-				<button class="cursor-pointer text-base leading-[105%] font-light uppercase md:text-xl">
+				<span class="text-base leading-[105%] font-regular md:text-xl">/</span>
+				<button
+					onclick={() => switchLang('en')}
+					class="cursor-pointer text-base leading-[105%] font-regular uppercase transition-opacity duration-300 md:text-xl {page
+						.params.lang === 'en'
+						? 'opacity-100'
+						: 'opacity-50 hover:opacity-100'}"
+				>
 					EN
 				</button>
 			</div>
 
-			<a href="/" aria-label="Mattéo Lambert - Accueil" class="flex items-center justify-self-center">
+			<a
+				href={localizedHref(page.params.lang as 'fr' | 'en', '/')}
+				aria-label="Mattéo Lambert - Accueil"
+				class="flex items-center justify-self-center"
+			>
 				<svg width="164" height="24" viewBox="0 0 164 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-auto md:h-6">
 					<path d="M6.264 17.5044V6.94439H8.552L11.976 15.9524H12.04L15.448 6.94439H17.64V17.5044H16.232L16.312 8.43239H16.216L12.68 17.5044H11.208L7.704 8.41639H7.608L7.672 17.5044H6.264ZM19.3223 17.5044L23.0343 6.94439H25.1463L28.8583 17.5044H27.2743L24.1703 8.17639H24.0103L20.9062 17.5044H19.3223ZM21.0663 15.1364V14.0164H27.2903V15.1364H21.0663ZM31.6454 17.5044V6.94439H33.1174V17.5044H31.6454ZM28.4774 8.22439V6.94439H36.3014V8.22439H28.4774ZM40.8173 17.5044V6.94439H42.2893V17.5044H40.8173ZM37.6493 8.22439V6.94439H45.4733V8.22439H37.6493ZM47.1078 17.5044V6.94439H48.5798V17.5044H47.1078ZM47.8758 17.5044V16.2404H54.4838V17.5044H47.8758ZM47.8758 12.7204V11.5204H53.7158V12.7204H47.8758ZM47.8758 8.20839V6.94439H54.4678V8.20839H47.8758ZM50.9638 5.72839H49.7158L50.8198 3.36039H52.4518L50.9638 5.72839ZM60.3816 17.7124C59.6136 17.7124 58.9363 17.5844 58.3496 17.3284C57.7736 17.0724 57.283 16.7097 56.8776 16.2404C56.483 15.7604 56.1843 15.1897 55.9816 14.5284C55.779 13.8564 55.6776 13.1044 55.6776 12.2724C55.6776 11.0457 55.8803 10.0271 56.2856 9.21639C56.691 8.39506 57.2456 7.77639 57.9496 7.36039C58.6643 6.94439 59.4803 6.73639 60.3976 6.73639C61.1123 6.73639 61.7523 6.85906 62.3176 7.10439C62.8936 7.34973 63.3843 7.71239 63.7896 8.19239C64.2056 8.66173 64.5203 9.24306 64.7336 9.93639C64.9576 10.6191 65.0696 11.4031 65.0696 12.2884C65.0696 13.1097 64.9683 13.8564 64.7656 14.5284C64.563 15.2004 64.259 15.7711 63.8536 16.2404C63.459 16.7097 62.9683 17.0724 62.3816 17.3284C61.8056 17.5844 61.139 17.7124 60.3816 17.7124ZM60.3816 16.4484C61.075 16.4484 61.6563 16.2884 62.1256 15.9684C62.6056 15.6377 62.9683 15.1684 63.2136 14.5604C63.459 13.9417 63.5816 13.1897 63.5816 12.3044C63.5816 11.4084 63.4536 10.6404 63.1976 10.0004C62.9416 9.36039 62.5736 8.87506 62.0936 8.54439C61.6136 8.20306 61.0376 8.03239 60.3656 8.03239C59.7043 8.03239 59.1336 8.19773 58.6536 8.52839C58.1843 8.85906 57.8216 9.33906 57.5656 9.96839C57.3096 10.5871 57.1816 11.3551 57.1816 12.2724C57.1816 12.9444 57.251 13.5417 57.3896 14.0644C57.539 14.5764 57.747 15.0137 58.0136 15.3764C58.291 15.7284 58.627 15.9951 59.0216 16.1764C59.4163 16.3577 59.8696 16.4484 60.3816 16.4484Z" fill="currentColor"/>
 					<path d="M75.4968 18.4909L78.4428 15.5052C78.7396 15.2044 78.7446 14.7228 78.454 14.4159L77.2294 13.1224L78.5245 14.3454C78.8319 14.6356 79.3141 14.6306 79.6153 14.3342L82.6049 11.3921L79.659 14.3778C79.3621 14.6786 79.3571 15.1602 79.6477 15.4671L80.8723 16.7606L79.5772 15.5376C79.2699 15.2474 78.7876 15.2523 78.4864 15.5488L75.4968 18.4909Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="bevel"/>
@@ -65,14 +105,16 @@
 	</div>
 
 	<div
-		class="fixed inset-0 -z-1 flex h-full w-full items-center md:items-start {isProjectPage
-			? 'md:justify-start'
-			: 'md:justify-center'}"
+		class="fixed inset-0 -z-1 flex h-full w-full items-center {isLaboratoryPage
+			? ''
+			: 'md:items-start'} {isProjectPage ? 'md:justify-start' : 'md:justify-center'}"
 	>
 		<img
 			src="/images/emboss_star.png"
 			alt=""
-			class="w-full max-w-3xl object-contain md:-mt-16 md:max-w-3xl lg:max-w-4xl xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-5xl {isProjectPage
+			class="w-full max-w-3xl object-contain {isLaboratoryPage
+				? ''
+				: 'md:-mt-16'} md:max-w-3xl lg:max-w-4xl xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-5xl {isProjectPage
 				? 'md:-translate-x-1/2'
 				: ''}"
 		/>

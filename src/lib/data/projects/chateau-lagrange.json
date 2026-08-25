@@ -26,21 +26,9 @@
 		"alt": ""
 	},
 	"images": [
-		{
-			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-			"alt": "Image 1 du projet Château Lagrange"
-		},
-		{
-			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-			"alt": "Image 2 du projet Château Lagrange"
-		},
-		{
-			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-			"alt": "Image 3 du projet Château Lagrange"
-		},
-		{
-			"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-			"alt": "Image 4 du projet Château Lagrange"
-		}
+		{ "src": "/images/pr_chateau_lagrange/image1_chateau_lagrange.jpg", "alt": "Image 1 du projet Château Lagrange" },
+		{ "src": "/images/pr_chateau_lagrange/image2_chateau_lagrange.jpg", "alt": "Image 2 du projet Château Lagrange" },
+		{ "src": "/images/pr_chateau_lagrange/image3_chateau_lagrange.jpg", "alt": "Image 3 du projet Château Lagrange" },
+		{ "src": "/images/pr_chateau_lagrange/image4_chateau_lagrange.jpg", "alt": "Image 4 du projet Château Lagrange" }
 	]
 }

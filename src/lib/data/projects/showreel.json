@@ -26,21 +26,9 @@
 		"alt": ""
 	},
 	"images": [
-		{
-			"src": "/images/pr_showreel/cover_showreel.jpg",
-			"alt": "Image 1 du projet Showreel"
-		},
-		{
-			"src": "/images/pr_showreel/cover_showreel.jpg",
-			"alt": "Image 2 du projet Showreel"
-		},
-		{
-			"src": "/images/pr_showreel/cover_showreel.jpg",
-			"alt": "Image 3 du projet Showreel"
-		},
-		{
-			"src": "/images/pr_showreel/cover_showreel.jpg",
-			"alt": "Image 4 du projet Showreel"
-		}
+		{ "src": "/images/pr_showreel/image1_showreel.png", "alt": "Image 1 du projet Showreel" },
+		{ "src": "/images/pr_showreel/image2_showreel.png", "alt": "Image 2 du projet Showreel" },
+		{ "src": "/images/pr_showreel/image3_showreel.png", "alt": "Image 3 du projet Showreel" },
+		{ "src": "/images/pr_showreel/image4_showreel.png", "alt": "Image 4 du projet Showreel" }
 	]
 }

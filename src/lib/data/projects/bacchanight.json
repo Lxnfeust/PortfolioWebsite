@@ -22,25 +22,13 @@
 		]
 	},
 	"poster": {
-		"src": "/images/pr_bacchanight/poster_bacchanight.jpg",
+		"src": "/images/pr_bacchanight/poster_bacchanight.png",
 		"alt": "Poster du projet Bacchanight"
 	},
 	"images": [
-		{
-			"src": "/images/pr_bacchanight/image1_bacchanight.jpg",
-			"alt": "Image 1 du projet Bacchanight"
-		},
-		{
-			"src": "/images/pr_bacchanight/cover_bacchanight.jpg",
-			"alt": "Image 2 du projet Bacchanight"
-		},
-		{
-			"src": "/images/pr_bacchanight/cover_bacchanight.jpg",
-			"alt": "Image 3 du projet Bacchanight"
-		},
-		{
-			"src": "/images/pr_bacchanight/cover_bacchanight.jpg",
-			"alt": "Image 4 du projet Bacchanight"
-		}
+		{ "src": "/images/pr_bacchanight/image1_bacchanight.png", "alt": "Image 1 du projet Bacchanight" },
+		{ "src": "/images/pr_bacchanight/image2_bacchanight.png", "alt": "Image 2 du projet Bacchanight" },
+		{ "src": "/images/pr_bacchanight/image3_bacchanight.png", "alt": "Image 3 du projet Bacchanight" },
+		{ "src": "/images/pr_bacchanight/image4_bacchanight.png", "alt": "Image 4 du projet Bacchanight" }
 	]
 }

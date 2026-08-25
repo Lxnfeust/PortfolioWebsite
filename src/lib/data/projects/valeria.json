@@ -21,26 +21,11 @@
 			}
 		]
 	},
-	"poster": {
-		"src": "",
-		"alt": ""
-	},
+	
 	"images": [
-		{
-			"src": "/images/pr_valeria/cover_valeria.jpg",
-			"alt": "Image 1 du projet Valeria"
-		},
-		{
-			"src": "/images/pr_valeria/cover_valeria.jpg",
-			"alt": "Image 2 du projet Valeria"
-		},
-		{
-			"src": "/images/pr_valeria/cover_valeria.jpg",
-			"alt": "Image 3 du projet Valeria"
-		},
-		{
-			"src": "/images/pr_valeria/cover_valeria.jpg",
-			"alt": "Image 4 du projet Valeria"
-		}
+		{ "src": "/images/pr_valeria/image1_valeria.png", "alt": "Image 1 du projet Valeria" },
+		{ "src": "/images/pr_valeria/image2_valeria.png", "alt": "Image 2 du projet Valeria" },
+		{ "src": "/images/pr_valeria/image3_valeria.png", "alt": "Image 3 du projet Valeria" },
+		{ "src": "/images/pr_valeria/image4_valeria.png", "alt": "Image 4 du projet Valeria" }
 	]
 }

@@ -1,11 +1,14 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import { localizedHref } from '$lib/i18n';
+
 	let { showMenu = $bindable() } = $props();
 
 	const navItems = [
-		{ number: 'A', name: 'Accueil', href: '/' },
-		{ number: 'B', name: 'Projets', href: '/projects' },
-		{ number: 'C', name: 'Laboratoire', href: '/laboratory' },
-		{ number: 'D', name: 'À propos de moi', href: '/about-me' }
+		{ name: 'Accueil', path: '/' },
+		{ name: 'Projets', path: '/projects' },
+		{ name: 'Laboratoire', path: '/laboratory' },
+		{ name: 'À propos de moi', path: '/about-me' }
 	];
 </script>
 
@@ -27,12 +30,15 @@
 			<ul class="flex flex-col gap-2 md:gap-4">
 				{#each navItems as navItem, i (i)}
 					<li>
-						<a href={navItem.href} class="flex items-end gap-2"
-							><span class="text-xl font-medium">{navItem.number}.</span><span
-								class="translate-x-0 font-diolce text-[2.25rem] md:text-4.5xl leading-[85%] uppercase italic transition duration-400 hover:translate-x-2"
-								>{navItem.name}</span
-							></a
+						<a
+							href={localizedHref(page.params.lang as 'fr' | 'en', navItem.path)}
+							onclick={() => (showMenu = false)}
+							class="flex items-end gap-2"
 						>
+							<span class="translate-x-0 font-diolce text-[2.25rem] leading-[85%] uppercase italic transition duration-400 hover:translate-x-2 md:text-4.5xl"
+								>{navItem.name}</span
+							>
+						</a>
 					</li>
 				{/each}
 			</ul>
@@ -52,4 +58,7 @@
 		<span class="leading-[105%] font-bold uppercase">Mail</span>
 		<span class="leading-[105%] font-bold uppercase">CV</span>
 	</div>
+
+	
 </div>
+

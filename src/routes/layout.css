@@ -17,6 +17,7 @@
 	--font-sans: 'bricolage-grotesque';
 	--font-diolce: 'diolce';
 	--color-theme-white: #eeeded;
+	--color-theme-white-opacity: rgba(238, 237, 237, 0.04);
 	--color-theme-black: rgb(21, 21, 21);
 	--color-theme-black-opacity: rgba(21, 21, 21, 0.1);
 	--text-2\.5xl: 28px;
@@ -74,6 +75,10 @@ body {
 }
 
 /* ------------------------------------------ HEADER ------------------------------------------ */
+
+header {
+	will-change: transform;
+}
 
 /* .header {
 	position: fixed;
