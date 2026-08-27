@@ -69,6 +69,11 @@
 
 /* ------------------------------------------ BODY ------------------------------------------ */
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 body {
 	height: 100vh;
 	background-color: var(--color-theme-white);
