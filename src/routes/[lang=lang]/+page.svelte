@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { localizedHref } from '$lib/i18n';
+	import { localizedHref, localizeProject, dictionaries } from '$lib/i18n';
 	import { projects } from '$lib/data/projects';
 
+	const lang = $derived(page.params.lang as 'fr' | 'en');
+	const t = $derived(dictionaries[lang]);
+
 	// --- Vitrine "Projets sélectionnés" ---
-	const featured = [projects.haeon, projects.nuitDesMusees, projects.aalcc, projects.serieMotion];
+	const featuredRaw = [projects.haeon, projects.nuitDesMusees, projects.aalcc, projects.serieMotion];
+	const featured = $derived(featuredRaw.map((p) => localizeProject(p, lang)));
 
 	let activeIndex = $state(0);
 	const active = $derived(featured[activeIndex]);
@@ -38,20 +42,38 @@
 	const SPAWN_INTERVAL = 120;
 	const TRAIL_LIFETIME = 700;
 
-	function handleLabMove(e: MouseEvent) {
+	let hasTouchedTeaser = $state(false);
+
+	function spawnTrailImage(x: number, y: number) {
 		const now = Date.now();
 		if (now - lastSpawn < SPAWN_INTERVAL) return;
 		lastSpawn = now;
 
-		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
 		const id = trailIdCounter++;
 		const src = previewImages[Math.floor(Math.random() * previewImages.length)];
 
-		trail = [...trail, { id, x: e.clientX - rect.left, y: e.clientY - rect.top, src }];
+		trail = [...trail, { id, x, y, src }];
 
 		setTimeout(() => {
 			trail = trail.filter((t) => t.id !== id);
 		}, TRAIL_LIFETIME);
+	}
+
+	function handleLabMove(e: MouseEvent) {
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		spawnTrailImage(e.clientX - rect.left, e.clientY - rect.top);
+	}
+
+	function handleLabTouchStart() {
+		hasTouchedTeaser = true;
+	}
+
+	function handleLabTouchMove(e: TouchEvent) {
+		hasTouchedTeaser = true;
+		const touch = e.touches[0];
+		if (!touch) return;
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		spawnTrailImage(touch.clientX - rect.left, touch.clientY - rect.top);
 	}
 </script>
 
@@ -59,12 +81,12 @@
 	<!-- HERO -->
 	<div class="flex flex-col items-center text-center">
 		<h1 class="font-diolce text-4.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
-			Designer &amp; DA Junior
+			{t.home.heroTitle}
 		</h1>
 		<div class="mt-[20vh] flex w-60 flex-col gap-2 3xl:w-[12.5vw]">
-			<p class="text-base leading-[105%]">Bonjour et bienvenue sur mon portfolio, moi c'est Mattéo.</p>
+			<p class="text-base leading-[105%]">{t.home.heroLine1}</p>
 			<p class="text-base leading-[105%]">
-				Designer 360, en éternelle quête de renouvellement de mes moyens d'expression créatifs.
+				{t.home.heroLine2}
 			</p>
 		</div>
 		<div class="mb-[10vh]"></div>
@@ -74,9 +96,9 @@
 	<div class="flex flex-col gap-4 xl:gap-8">
 		<hr class="h-px w-full bg-theme-black" />
 		<div class="flex items-end justify-between">
-			<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">Projets sélectionnés</h2>
-			<a href={localizedHref(page.params.lang, '/projects')} class="text-base leading-[105%] font-medium uppercase md:text-xl">
-				Tous les projets&nbsp;→
+			<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">{t.home.featuredTitle}</h2>
+			<a href={localizedHref(lang, '/projects')} class="text-base leading-[105%] font-medium uppercase text-right md:text-xl">
+				{t.common.allProjects}&nbsp;→
 			</a>
 		</div>
 
@@ -85,10 +107,10 @@
 			data-theme="dark"
 			class="relative h-[80vh] w-full overflow-hidden rounded bg-theme-black md:aspect-video md:h-[80vh] md:max-h-[80vh]"
 		>
-			<a href={localizedHref(page.params.lang, `/projects/${active.slug}`)} class="absolute inset-0 block">
+			<a href={localizedHref(lang, `/projects/${active.slug}`)} class="absolute inset-0 block">
 				<picture>
 					<source media="(max-width: 1100px)" srcset={active.coverMobile ?? active.cover} />
-					<img src={active.cover} alt={active.name} class="h-full w-full object-cover" />
+					<img src={active.cover} alt={`Aperçu du projet ${active.name}`} class="h-full w-full object-cover" />
 				</picture>
 			</a>
 
@@ -100,7 +122,7 @@
 							<button
 								type="button"
 								onclick={() => selectProject(i)}
-								aria-label={`Voir ${project.name}`}
+								aria-label={`${t.home.viewProject} ${project.name}`}
 								class="group flex flex-1 cursor-pointer flex-col items-center gap-1 md:gap-2"
 							>
 								<img
@@ -126,7 +148,7 @@
 						<button
 							type="button"
 							onclick={goPrev}
-							aria-label="Projet précédent"
+							aria-label={t.home.prevProject}
 							class="flex h-full w-fit cursor-pointer items-center justify-center rounded bg-theme-white px-2 md:px-4"
 						>
 							<svg width="12" height="9" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:h-[15px] md:w-[20px]">
@@ -138,18 +160,18 @@
 						</button>
 						<div class="flex flex-1 items-center justify-between gap-2 rounded bg-theme-white px-2 py-2 md:gap-6 md:px-4 md:py-4">
 							<div class="flex items-start gap-1 xl:gap-1.5">
-								<span class="text-[10px] md:text-[12px] xl:text-[14px] 2xl:text-[16px] leading-[105%] uppercase">Titre</span>
+								<span class="text-[10px] md:text-[12px] xl:text-[14px] 2xl:text-[16px] leading-[105%] uppercase">{t.home.labelTitle}</span>
 								<span class="text-sm md:text-[16px] xl:text-[20px] 2xl:text-[24px] font-medium leading-none uppercase">{active.name}</span>
 							</div>
 							<div class="flex items-start gap-1 xl:gap-1.5">
-								<span class="text-[10px] md:text-[12px] xl:text-[14px] 2xl:text-[16px] leading-[105%] uppercase">Année</span>
+								<span class="text-[10px] md:text-[12px] xl:text-[14px] 2xl:text-[16px] leading-[105%] uppercase">{t.home.labelYear}</span>
 								<span class="text-sm md:text-[16px] xl:text-[20px] 2xl:text-[24px] font-medium leading-none uppercase">{active.year}</span>
 							</div>
 						</div>
 						<button
 							type="button"
 							onclick={goNext}
-							aria-label="Projet suivant"
+							aria-label={t.home.nextProjectArrow}
 							class="flex h-full w-fit cursor-pointer items-center justify-center rounded bg-theme-white px-2 md:px-4"
 						>
 							<svg
@@ -176,16 +198,18 @@
 	<div class="flex isolate flex-col gap-4 xl:gap-8">
 		<hr class="h-px w-full bg-theme-black" />
 		<div class="flex items-end justify-between">
-			<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">En voir plus&nbsp;?</h2>
-			<a href={localizedHref(page.params.lang, '/laboratory')} class="text-base leading-[105%] font-medium uppercase md:text-xl">
-				Laboratoire&nbsp;→
+			<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">{t.home.labSectionTitle}</h2>
+			<a href={localizedHref(lang, '/playground')} class="text-base leading-[105%] font-medium uppercase md:text-xl">
+				{t.nav.laboratory}&nbsp;→
 			</a>
 		</div>
 
 		<a
-			href={localizedHref(page.params.lang, '/laboratory')}
+			href={localizedHref(lang, '/playground')}
 			data-theme="dark"
 			onmousemove={handleLabMove}
+			ontouchstart={handleLabTouchStart}
+			ontouchmove={handleLabTouchMove}
 			class="relative block h-[50vh] w-full overflow-hidden rounded bg-theme-black"
 		>
 			{#each trail as item (item.id)}
@@ -197,9 +221,19 @@
 				/>
 			{/each}
 
+			<div
+				class="pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-700 md:hidden {hasTouchedTeaser
+					? 'opacity-0'
+					: 'opacity-100'}"
+			>
+				<span class="text-sm leading-[105%] font-medium text-theme-white uppercase">
+					{t.home.labDragHint}
+				</span>
+			</div>
+
 			<div class="pointer-events-none absolute inset-0 flex items-end p-2 md:p-4">
 				<p class="text-base leading-[105%] text-theme-white uppercase">
-					Créations spontanées &amp; expérimentations
+					{t.home.labText}
 				</p>
 			</div>
 		</a>
@@ -213,6 +247,6 @@
 		}}
 		class="flex justify-center border-y py-4 text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"
 	>
-		Remonter la page
+		{t.home.backToTop}
 	</a>
 </div>

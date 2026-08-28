@@ -2,22 +2,31 @@
 	"id": "10",
 	"slug": "showreel",
 	"year": "2024",
-	"name": "Showreel",
+	"name": { "fr": "Showreel", "en": "Showreel" },
 	"cover": "/images/pr_showreel/cover_showreel.jpg",
-	"title": "Showreel 2024.",
-	"description": "Courte vidéo de présentation de mes différents projets Vidéo, Motion Design, Graphisme ou encore 3D et Réalité Virtuelle. C’est un condensé des projets que j’ai pu réaliser durant mon BUT MMI, des expériences professionnelles ou sur mon temps libre. (“lxnfeust” est mon alias/pseudo).",
+	"title": { "fr": "Showreel 2024.", "en": "Showreel 2024." },
+	"description": {
+		"fr": "Courte vidéo de présentation de mes différents projets Vidéo, Motion Design, Graphisme ou encore 3D et Réalité Virtuelle. C’est un condensé des projets que j’ai pu réaliser durant mon BUT MMI, des expériences professionnelles ou sur mon temps libre. (“lxnfeust” est mon alias/pseudo).",
+		"en": "A short video presenting my various projects in video, motion design, graphic design, 3D and virtual reality. It's a condensed look at the work I've produced during my BUT MMI degree, professional experience, or in my free time. (“lxnfeust” is my alias/username.)"
+	},
 	"presentation_image": {
 		"src": "/images/pr_showreel/cover_showreel.jpg",
-		"alt": "Image de présentation du projet Showreel"
+		"alt": {
+			"fr": "Image de présentation du projet Showreel",
+			"en": "Presentation image for the Showreel project"
+		}
 	},
 	"project_infos": {
-		"title": "plus de détails :",
-		"description": "Ce showreel a été entièrement réalisé par mes soins et sans l’emploi d’aucune template. L’homogénéité globale est présente tout au long de cette vidéo est voulue et vient apporter une forme de cohérence entre différents projets tous singuliers.",
+		"title": { "fr": "plus de détails :", "en": "more details:" },
+		"description": {
+			"fr": "Ce showreel a été entièrement réalisé par mes soins et sans l’emploi d’aucune template. L’homogénéité globale est présente tout au long de cette vidéo est voulue et vient apporter une forme de cohérence entre différents projets tous singuliers.",
+			"en": "This showreel was made entirely by me, without using any template. The overall consistency running through the video is intentional, bringing a sense of coherence to a set of projects that are each very different from one another."
+		},
 		"links": [
 			{
-				"url": "",
-				"text": "Vidéo",
-				"target": ""
+				"url": "https://youtu.be/AzjLgGhcN5w",
+				"text": { "fr": "Vidéo", "en": "Video" },
+				"target": "_blank"
 			}
 		]
 	},
@@ -26,9 +35,21 @@
 		"alt": ""
 	},
 	"images": [
-		{ "src": "/images/pr_showreel/image1_showreel.png", "alt": "Image 1 du projet Showreel" },
-		{ "src": "/images/pr_showreel/image2_showreel.png", "alt": "Image 2 du projet Showreel" },
-		{ "src": "/images/pr_showreel/image3_showreel.png", "alt": "Image 3 du projet Showreel" },
-		{ "src": "/images/pr_showreel/image4_showreel.png", "alt": "Image 4 du projet Showreel" }
+		{
+			"src": "/images/pr_showreel/image1_showreel.png",
+			"alt": { "fr": "Image 1 du projet Showreel", "en": "Image 1 of the Showreel project" }
+		},
+		{
+			"src": "/images/pr_showreel/image2_showreel.png",
+			"alt": { "fr": "Image 2 du projet Showreel", "en": "Image 2 of the Showreel project" }
+		},
+		{
+			"src": "/images/pr_showreel/image3_showreel.png",
+			"alt": { "fr": "Image 3 du projet Showreel", "en": "Image 3 of the Showreel project" }
+		},
+		{
+			"src": "/images/pr_showreel/image4_showreel.png",
+			"alt": { "fr": "Image 4 du projet Showreel", "en": "Image 4 of the Showreel project" }
+		}
 	]
 }

@@ -1,16 +1,26 @@
 <script lang="ts">
+	
 	import type { PageProps } from './$types';
 	import { page } from '$app/state';
-	import { localizedHref } from '$lib/i18n';
+	import { localizedHref, dictionaries } from '$lib/i18n';
 	import { projects } from '$lib/data/projects';
+	import { localizeProject } from '$lib/i18n';
+
+	import { onMount, onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
+
 	let { data }: PageProps = $props();
 
-	const lang = $derived(page.params.lang);
+	const lang = $derived(page.params.lang as 'fr' | 'en');
+	const t = $derived(dictionaries[lang]);
 
-	const projectList = Object.values(projects);
+	const projectListRaw = Object.values(projects);
+	const nextProjectRaw = $derived(
+		projectListRaw.find((project) => Number(project.id) === Number(data.id) + 1) ||
+			projectListRaw.find((project) => Number(project.id) === 1)
+	);
 	const nextProject = $derived(
-		projectList.find((project) => Number(project.id) === Number(data.id) + 1) ||
-			projectList.find((project) => Number(project.id) === 1)
+		nextProjectRaw ? localizeProject(nextProjectRaw, lang) : undefined
 	);
 
 	function isVideo(src: string) {
@@ -32,22 +42,92 @@
 		};
 	}
 
-	import { afterNavigate } from '$app/navigation';
-	afterNavigate(() => {
-    window.scrollTo(0, 0);
-  	});
+	// --- Grille de 4 images/vidéos : taille de case calculée dynamiquement ---
+	let coverEl;
+	let gridEl;
+	let gridSizeStyle = $state('');
+
+	function getMediaRatio(src: string): Promise<number> {
+		return new Promise((resolve) => {
+			if (isVideo(src)) {
+				const v = document.createElement('video');
+				v.preload = 'metadata';
+				v.onloadedmetadata = () => resolve(v.videoWidth / v.videoHeight || 1);
+				v.onerror = () => resolve(1);
+				v.src = src;
+			} else {
+				const img = new Image();
+				img.onload = () => resolve(img.naturalWidth / img.naturalHeight || 1);
+				img.onerror = () => resolve(1);
+				img.src = src;
+			}
+		});
+	}
+
+	async function computeGridSizing() {
+		if (!browser) return;
+
+		if (window.innerWidth < 1280) {
+			gridSizeStyle = ''; // en dessous de xl, on ne touche à rien : comportement mobile/tablette inchangé
+			return;
+		}
+
+		if (!coverEl) return;
+		const fullHeight = coverEl.clientHeight;
+		if (!fullHeight) return;
+
+		const ratios = await Promise.all(data.images.map((img) => getMediaRatio(img.src)));
+		const widestRatio = ratios.length > 0 ? Math.max(...ratios) : 1;
+
+		const GRID_PADDING = 8; // p-2, en px, appliqué en haut ET en bas
+		const GRID_GAP = 8; // gap-2, en px, entre les 2 lignes
+
+		const availableHeight = fullHeight - GRID_PADDING * 2 - GRID_GAP;
+		const rowHeight = availableHeight / 2;
+		const colWidth = rowHeight * widestRatio;
+
+		gridSizeStyle = `grid-template-columns: ${colWidth}px ${colWidth}px; grid-template-rows: ${rowHeight}px ${rowHeight}px;`;
+	}
+
+	function handleGridResize() {
+		computeGridSizing();
+	}
+
+	onMount(() => {
+		computeGridSizing();
+		window.addEventListener('resize', handleGridResize);
+	});
+
+	onDestroy(() => {
+		if (browser) window.removeEventListener('resize', handleGridResize);
+	});
+	// ---------------------------------------------------------------------
 
 	let container;
 
+	import { afterNavigate } from '$app/navigation';
+
 	afterNavigate(() => {
-	window.scrollTo(0, 0);
-	container?.scrollTo(0, 0);
+		requestAnimationFrame(() => {
+			window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+			document.documentElement.scrollTop = 0;
+			document.body.scrollTop = 0;
+			container?.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+			computeGridSizing();
+		});
 	});
 </script>
 
+<!--NE PAS INDEXER LES PAGES DE PROJETS EN ENTREPRISE-->
+<svelte:head>
+	{#if data.noindex}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
+</svelte:head>
 
 
-<section use:horizontalScroll bind:this={container} class="flex flex-col gap-30 px-6 pt-6 xl:flex-col xl:h-[calc(100lvh-72px)] xl:overflow-x-auto xl:gap-0 xl:px-0 xl:pt-0">
+
+<section use:horizontalScroll bind:this={container} class="flex flex-col gap-10 px-6 pt-6 xl:flex-col xl:h-[calc(100lvh-72px)] xl:overflow-x-auto xl:gap-0 xl:px-0 xl:pt-0">
 
 	<!-- TITLE -->
 	<div class="flex flex-col gap-6 xl:sticky xl:left-0 xl:z-10 xl:min-w-fit xl:px-6 md:pt-0 xl:pt-4">
@@ -56,13 +136,15 @@
 				{data.name}
 			</h1>
 		</div>
+		<!--
 		<div class="flex gap-2 left-0">
-			<a href={localizedHref(lang, '/')} class="text-xs xl:text-[1rem] leading-[105%]">Accueil</a>
+			<a href={localizedHref(lang, '/')} class="text-xs xl:text-[1rem] leading-[105%]">{t.nav.home}</a>
 			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
-			<a href={localizedHref(lang, '/projects')} class="text-xs xl:text-[1rem] leading-[105%]">Projets</a>
+			<a href={localizedHref(lang, '/projects')} class="text-xs xl:text-[1rem] leading-[105%]">{t.nav.projects}</a>
 			<span class="text-xs xl:text-[1rem] leading-[105%]">&#62;</span>
 			<span class="text-xs xl:text-[1rem] leading-[105%]">{data.name}</span>
 		</div>
+		-->
 	</div>
 
   	<!-- CONTENU SCROLLABLE -->
@@ -80,7 +162,7 @@
 					</div>
 				</div>
 				<div class="hidden flex-col items-center gap-4 md:flex xl:hidden">
-					<span class="leading-[105%] font-medium uppercase">Scroll</span>
+					<span class="leading-[105%] font-medium uppercase">{t.common.scroll}</span>
 					<hr class="h-12.5 w-px bg-theme-black" />
 				</div>
 			</div>
@@ -89,6 +171,7 @@
 		<!-- COVER -->
 		{#if isVideo(data.presentation_image.src)}
 			<video
+				bind:this={coverEl}
 				src={data.presentation_image.src}
 				autoplay
 				loop
@@ -98,6 +181,7 @@
 			></video>
 			{:else}
 			<img
+				bind:this={coverEl}
 				src={data.presentation_image.src}
 				alt={data.presentation_image.alt}
 				class="w-full rounded xl:h-full xl:w-auto xl:max-w-none xl:object-cover"
@@ -120,7 +204,7 @@
 					</div>
 				{/if}
 			</div>
-			<span class="hidden font-diolce text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:flex xl:absolute xl:left-0 xl:bottom-0">Voir Plus :</span>
+			<span class="hidden font-diolce text-2.5xl leading-[85%] uppercase md:text-4.5xl xl:flex xl:absolute xl:left-0 xl:bottom-0">{t.projectPage.seeMore}</span>
 			<span class="hidden leading-[105%] font-medium uppercase xl:flex xl:absolute xl:right-0 xl:bottom-0">{data.name}</span>
 		</div>
 
@@ -144,7 +228,9 @@
 
 		<!-- GRID IMAGES -->
 		<div
-			class="grid grid-cols-1 gap-2 bg-theme-black p-2 md:grid-cols-2 xl:h-full xl:w-auto xl:max-w-[35.4167vw] xl:shrink-0 xl:grid-cols-[repeat(2,minmax(0,auto))] xl:grid-rows-[repeat(2,minmax(0,auto))]"
+			bind:this={gridEl}
+			style={gridSizeStyle}
+			class="grid grid-cols-1 gap-2 bg-theme-black p-2 md:grid-cols-2 xl:h-full xl:w-auto xl:shrink-0 xl:grid-cols-[repeat(2,minmax(0,auto))] xl:grid-rows-[repeat(2,minmax(0,auto))]"
 		>
 			{#each data.images as image, i}
 				{#if isVideo(image.src)}
@@ -175,7 +261,7 @@
             			<span class="text-xl leading-[105%] font-medium uppercase">{nextProject.name}</span>
           			</div>
           			<img src={nextProject.presentation_image.src} alt={nextProject.presentation_image.alt} class="aspect-4/3 w-full object-cover" />
-          			<span class="self-end leading-[105%] font-medium uppercase">Next project →</span>
+          			<span class="self-end leading-[105%] font-medium uppercase">{t.common.nextProject}</span>
         		</a>
       		</div>
     	{/if}

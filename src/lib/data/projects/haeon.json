@@ -2,18 +2,27 @@
 	"id": "1",
 	"slug": "haeon",
 	"year": "2026",
-	"name": "Haeon",
+	"name": { "fr": "Haeon", "en": "Haeon" },
 	"cover": "/images/pr_haeon/cover_haeon.jpg",
 	"coverMobile": "/images/pr_haeon/cover_mobile_haeon.jpg",
-	"title": "PAGE en cours de construction.",
-	"description": "Mon projet de fin d'études arrive bientôt. Revenez plus tard pour découvrir HAEON en détail.",
+	"title": {
+		"fr": "HAEON, hub de sauvegarde des travaux fan-made",
+		"en": "HAEON, a hub for preserving fan-made works"
+	},
+	"description": {
+		"fr": "Le fan-made, c'est une forme de création réalisée par des fans envers une œuvre (films, jeux, séries, livres, etc.). Les fans produisent alors des contenus dérivés, dans le but d'enrichir l'univers, d'y ajouter une nouvelle dimension ou de se le réapproprier. HAEON est la première plateforme mondiale dédiée à la fois à la valorisation et à la sauvegarde des travaux fan-made. Cette pratique, aujourd'hui mise en danger par les algorithmes modernes, constitue un puits d'inspirations et d'innovations qu'on ne peut se permettre d'oublier.",
+		"en": "Fan-made content is a form of creation made by fans in response to a work — films, games, series, books, and so on. Fans produce derivative content to enrich the universe, add a new dimension to it, or make it their own. HAEON is the world's first platform dedicated to both showcasing and preserving fan-made work. This practice, now under threat from modern algorithms, is a wellspring of inspiration and innovation we simply cannot afford to lose."
+	},
 	"presentation_image": {
 		"src": "/images/pr_haeon/cover_haeon.jpg",
-		"alt": "Image de présentation du projet Haeon"
+		"alt": { "fr": "Image de présentation du projet Haeon", "en": "Presentation image for the HAEON project" }
 	},
 	"project_infos": {
-		"title": "Bientôt disponible",
-		"description": "Le contenu de ce projet est en cours de finalisation.",
+		"title": { "fr": "Mise en place", "en": "Building the project" },
+		"description": {
+			"fr": "Ce projet répond à la problématique que je me suis moi-même fixée : \"Comment assurer la pérennité et l'engagement des artistes dans une ère où la production par profit prend le pas sur la production par passion ?\". C'est ce constat qui m'a amené à créer entièrement HAEON, du concept à l'identité, en passant par une stratégie de déploiement, une plateforme et même un plan de lancement. Touché depuis longtemps par la cause, si ce projet devait sortir aujourd'hui, il pourrait grandement contribuer à ce que les créations de fans ne tombent pas dans l'oubli.",
+			"en": "This project answers a question I set for myself: \"How can we ensure the longevity and engagement of artists in an era where profit-driven production is overtaking passion-driven production?\" This realisation led me to build HAEON entirely from the ground up: the concept, the identity, a deployment strategy, a platform, and even a launch plan. Having cared about this cause for a long time, if this project were to launch today, it could genuinely help stop fan creations from being forgotten."
+		},
 		"links": []
 	},
 	"poster": {
@@ -21,9 +30,21 @@
 		"alt": ""
 	},
 	"images": [
-		{ "src": "/images/pr_haeon/image1_haeon.jpg", "alt": "" },
-		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" },
-		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" },
-		{ "src": "/images/pr_haeon/cover_haeon.jpg", "alt": "" }
+		{
+			"src": "/images/pr_haeon/image1_haeon.jpg",
+			"alt": { "fr": "Image 1 du projet HAEON", "en": "Image 1 of the HAEON project" }
+		},
+		{
+			"src": "/images/pr_haeon/image3_haeon.jpg",
+			"alt": { "fr": "Image 2 du projet HAEON", "en": "Image 2 of the HAEON project" }
+		},
+		{
+			"src": "/images/pr_haeon/video1_haeon.mp4",
+			"alt": { "fr": "Vidéo du projet HAEON", "en": "Video of the HAEON project" }
+		},
+		{
+			"src": "/images/pr_haeon/image2_haeon.jpg",
+			"alt": { "fr": "Image 3 du projet HAEON", "en": "Image 3 of the HAEON project" }
+		}
 	]
 }

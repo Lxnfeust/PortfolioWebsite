@@ -1,23 +1,41 @@
 {
 	"id": "6",
 	"slug": "chateau-lagrange",
+
+	"noindex": true,
+
 	"year": "2025",
-	"name": "Château Lagrange",
+	"name": { "fr": "Château Lagrange", "en": "Château Lagrange" },
 	"cover": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-	"title": "Château lagrange, collection héritage.",
-	"description": "Dans le cadre de mon alternance chez Favoreat Design, j’ai pu contribuer à la création et mise en place d’un évènement qui mettait en avant la collection Héritage par Château Lagrange. J’ai pu réaliser le site internet et la brochure qui comportaient les informations clés sur cette collection inédite.",
+	"title": {
+		"fr": "Château lagrange, collection héritage.",
+		"en": "Château Lagrange, Heritage collection."
+	},
+	"description": {
+		"fr": "Dans le cadre de mon alternance chez Favoreat Design, j’ai pu contribuer à la création et mise en place d’un évènement qui mettait en avant la collection Héritage par Château Lagrange. J’ai pu réaliser le site internet et la brochure qui comportaient les informations clés sur cette collection inédite.",
+		"en": "As part of my work placement at Favoreat Design, I contributed to the creation and rollout of an event showcasing the Heritage collection by Château Lagrange. I designed the website and brochure featuring the key information about this exclusive collection."
+	},
 	"presentation_image": {
 		"src": "/images/pr_chateau_lagrange/cover_chateau_lagrange.jpg",
-		"alt": "Image de présentation du projet Château Lagrange"
+		"alt": {
+			"fr": "Image de présentation du projet Château Lagrange",
+			"en": "Presentation image for the Château Lagrange project"
+		}
 	},
 	"project_infos": {
-		"title": "Retranscrire la maîtrise grâce à la mise en page.",
-		"description": "Ce projet et cet évènement ont vu le jour en s’appuyant sur le terme “quiet mastery” qui retranscrit des années de savoir-faire précis & précieux. Mon rôle était de refléter au mieux ce sentiment à travers 2 mises en pages différentes : une destinée au web et l’autre pour l’impression.",
+		"title": {
+			"fr": "Retranscrire la maîtrise grâce à la mise en page.",
+			"en": "Conveying mastery through layout."
+		},
+		"description": {
+			"fr": "Ce projet et cet évènement ont vu le jour en s’appuyant sur le terme “quiet mastery” qui retranscrit des années de savoir-faire précis & précieux. Mon rôle était de refléter au mieux ce sentiment à travers 2 mises en pages différentes : une destinée au web et l’autre pour l’impression.",
+			"en": "This project and event were built around the term “quiet mastery”, reflecting years of precise, valuable know-how. My role was to best capture that feeling through two different layouts: one for the web, and one for print."
+		},
 		"links": [
 			{
-				"url": "",
-				"text": "La brochure",
-				"target": ""
+				"url": "https://chateau-lagrange.com/wp-content/uploads/2025/11/chateau-lagrange-collection-heritage-fr.pdf",
+				"text": { "fr": "La brochure", "en": "The brochure" },
+				"target": "_blank"
 			}
 		]
 	},
@@ -26,9 +44,21 @@
 		"alt": ""
 	},
 	"images": [
-		{ "src": "/images/pr_chateau_lagrange/image1_chateau_lagrange.jpg", "alt": "Image 1 du projet Château Lagrange" },
-		{ "src": "/images/pr_chateau_lagrange/image2_chateau_lagrange.jpg", "alt": "Image 2 du projet Château Lagrange" },
-		{ "src": "/images/pr_chateau_lagrange/image3_chateau_lagrange.jpg", "alt": "Image 3 du projet Château Lagrange" },
-		{ "src": "/images/pr_chateau_lagrange/image4_chateau_lagrange.jpg", "alt": "Image 4 du projet Château Lagrange" }
+		{
+			"src": "/images/pr_chateau_lagrange/image1_chateau_lagrange.jpg",
+			"alt": { "fr": "Image 1 du projet Château Lagrange", "en": "Image 1 of the Château Lagrange project" }
+		},
+		{
+			"src": "/images/pr_chateau_lagrange/image2_chateau_lagrange.jpg",
+			"alt": { "fr": "Image 2 du projet Château Lagrange", "en": "Image 2 of the Château Lagrange project" }
+		},
+		{
+			"src": "/images/pr_chateau_lagrange/image3_chateau_lagrange.jpg",
+			"alt": { "fr": "Image 3 du projet Château Lagrange", "en": "Image 3 of the Château Lagrange project" }
+		},
+		{
+			"src": "/images/pr_chateau_lagrange/image4_chateau_lagrange.jpg",
+			"alt": { "fr": "Image 4 du projet Château Lagrange", "en": "Image 4 of the Château Lagrange project" }
+		}
 	]
 }

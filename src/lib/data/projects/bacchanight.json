@@ -2,33 +2,57 @@
 	"id": "9",
 	"slug": "bacchanight",
 	"year": "2023",
-	"name": "Bacchanight",
+	"name": { "fr": "Bacchanight", "en": "Bacchanight" },
 	"cover": "/images/pr_bacchanight/cover_bacchanight.jpg",
-	"title": "MusBA Bordeaux, Bacchanight.",
-	"description": "Une expérience interactive pour promouvoir différentes œuvres du Musée des Beaux-Arts de Bordeaux lors de la soirée de la Bacchanight, organisée le 21 Mars 2023. Il s’agit donc de partir à la recherche de l’ombre voleuse du musée via un court-métrage dont vous êtes le héros / l’héroïne.",
+	"title": { "fr": "MusBA Bordeaux, Bacchanight.", "en": "MusBA Bordeaux, Bacchanight." },
+	"description": {
+		"fr": "Une expérience interactive pour promouvoir différentes œuvres du Musée des Beaux-Arts de Bordeaux lors de la soirée de la Bacchanight, organisée le 21 Mars 2023. Il s’agit donc de partir à la recherche de l’ombre voleuse du musée via un court-métrage dont vous êtes le héros / l’héroïne.",
+		"en": "An interactive experience promoting various works from the Bordeaux Museum of Fine Arts during the Bacchanight evening, held on 21 March 2023. It involves searching for the museum's thieving shadow through a short film in which you are the hero or heroine."
+	},
 	"presentation_image": {
 		"src": "/images/pr_bacchanight/kv_bacchanight.jpg",
-		"alt": "Image de présentation du projet Bacchanight"
+		"alt": {
+			"fr": "Image de présentation du projet Bacchanight",
+			"en": "Presentation image for the Bacchanight project"
+		}
 	},
 	"project_infos": {
-		"title": "L’ombre du musée :",
-		"description": "Ce projet combine de nombreuses expertises variées comme le tournage, le montage, le motion design et les effets spéciaux, dont j'ai été le Directeur Artistique.",
+		"title": { "fr": "L’ombre du musée :", "en": "The museum's shadow:" },
+		"description": {
+			"fr": "Ce projet combine de nombreuses expertises variées comme le tournage, le montage, le motion design et les effets spéciaux, dont j'ai été le Directeur Artistique.",
+			"en": "This project brings together a wide range of expertise — filming, editing, motion design and visual effects — for which I acted as Art Director."
+		},
 		"links": [
 			{
-				"url": "",
-				"text": "Site web",
-				"target": ""
+				"url": "https://lombredumusee.netlify.app/",
+				"text": { "fr": "Site web", "en": "Website" },
+				"target": "_blank"
 			}
 		]
 	},
 	"poster": {
 		"src": "/images/pr_bacchanight/poster_bacchanight.png",
-		"alt": "Poster du projet Bacchanight"
+		"alt": {
+			"fr": "Poster du projet Bacchanight",
+			"en": "Poster for the Bacchanight project"
+		}
 	},
 	"images": [
-		{ "src": "/images/pr_bacchanight/image1_bacchanight.png", "alt": "Image 1 du projet Bacchanight" },
-		{ "src": "/images/pr_bacchanight/image2_bacchanight.png", "alt": "Image 2 du projet Bacchanight" },
-		{ "src": "/images/pr_bacchanight/image3_bacchanight.png", "alt": "Image 3 du projet Bacchanight" },
-		{ "src": "/images/pr_bacchanight/image4_bacchanight.png", "alt": "Image 4 du projet Bacchanight" }
+		{
+			"src": "/images/pr_bacchanight/image1_bacchanight.png",
+			"alt": { "fr": "Image 1 du projet Bacchanight", "en": "Image 1 of the Bacchanight project" }
+		},
+		{
+			"src": "/images/pr_bacchanight/image2_bacchanight.png",
+			"alt": { "fr": "Image 2 du projet Bacchanight", "en": "Image 2 of the Bacchanight project" }
+		},
+		{
+			"src": "/images/pr_bacchanight/image3_bacchanight.png",
+			"alt": { "fr": "Image 3 du projet Bacchanight", "en": "Image 3 of the Bacchanight project" }
+		},
+		{
+			"src": "/images/pr_bacchanight/image4_bacchanight.png",
+			"alt": { "fr": "Image 4 du projet Bacchanight", "en": "Image 4 of the Bacchanight project" }
+		}
 	]
 }

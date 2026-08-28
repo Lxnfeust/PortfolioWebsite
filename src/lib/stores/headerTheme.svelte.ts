@@ -12,10 +12,15 @@ class HeaderThemeStore {
 
 			const headerHeight = headerEl.offsetHeight;
 			const lineTop = headerHeight;
-			const lineBottom = Math.max(window.innerHeight - headerHeight - 1, 0);
+			const lineBottom = Math.max(window.innerHeight - headerHeight, 0);
 
-			// On recalcule à chaque fois qu'un élément data-theme="dark"
-			// entre ou sort de la fine ligne de déclenchement (hauteur du header).
+			const darkElements = document.querySelectorAll<HTMLElement>('[data-theme="dark"]');
+
+			if (darkElements.length === 0) {
+				this.theme = 'light';
+				return;
+			}
+
 			this.#observer = new IntersectionObserver(
 				() => {
 					const dark = Array.from(document.querySelectorAll<HTMLElement>('[data-theme="dark"]')).some(
@@ -32,9 +37,7 @@ class HeaderThemeStore {
 				}
 			);
 
-			document
-				.querySelectorAll('[data-theme="dark"]')
-				.forEach((el) => this.#observer!.observe(el));
+			darkElements.forEach((el) => this.#observer!.observe(el));
 		};
 
 		build();

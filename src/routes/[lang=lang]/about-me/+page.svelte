@@ -1,36 +1,37 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { localizedHref } from '$lib/i18n';
+	import { localizedHref, dictionaries } from '$lib/i18n';
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 
 	const lang = $derived(page.params.lang as 'fr' | 'en');
+	const t = $derived(dictionaries[lang]);
 
 	const books = [
 		{
 			src: '/images/about/bibliotheque/Book1_ThreeDimensional.jpg',
 			title: 'Three Dimensional',
-			category: 'Design 3D'
+			categoryKey: 'design3d' as const
 		},
 		{
 			src: '/images/about/bibliotheque/Book2_NewUtilitarian.jpg',
 			title: 'New Utilitarian',
-			category: 'Design & Branding'
+			categoryKey: 'brandingDesign' as const
 		},
 		{
 			src: '/images/about/bibliotheque/Book3_Fantastique.jpg',
 			title: 'Fantastique',
-			category: "Histoire de l'art"
+			categoryKey: 'artHistory' as const
 		},
 		{
 			src: '/images/about/bibliotheque/Book4_Chimera.jpg',
 			title: 'Chimera',
-			category: 'Artbook/Illustration'
+			categoryKey: 'artbook' as const
 		},
 		{
 			src: '/images/about/bibliotheque/Book5_TypographyForScreen.jpg',
 			title: 'Typography for screen',
-			category: 'Motion Design'
+			categoryKey: 'motionDesign' as const
 		}
 	];
 
@@ -147,13 +148,15 @@
 	<div class="flex flex-col gap-6 pb-8">
 		<div class="flex flex-col gap-6">
 			<h1 class="flex font-diolce text-4.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
-				À propos de moi
+				{t.nav.aboutMe}
 			</h1>
+			<!--
 			<div class="flex gap-2 text-xs font-medium uppercase">
-				<a href={localizedHref(lang, '/')} class="leading-[105%]">Accueil</a>
+				<a href={localizedHref(lang, '/')} class="leading-[105%]">{t.nav.home}</a>
 				<span class="leading-[105%]">></span>
-				<p class="leading-[105%]">À propos de moi</p>
+				<p class="leading-[105%]">{t.nav.aboutMe}</p>
 			</div>
+			-->
 		</div>
 
 		<div class="flex flex-col justify-center gap-20 lg:gap-6 lg:flex-row lg:items-top lg:h-[40vh] xl:h-[50vh] ">
@@ -163,21 +166,18 @@
 				<img
 					src="/images/about/image_about.jpg"
 					alt="Photo de Mattéo Lambert"
-					class="absolute inset-0 h-full w-full object-cover"
+					class="absolute inset-0 h-full w-full rounded object-cover"
 				/>
 			</div>
 
 			<div class="flex flex-1 flex-col gap-16 mx-auto md:max-w-105 lg:mx-0 lg:justify-between lg:w-80 lg:flex-none xl:w-80 xl:h-full xl:flex-none xl:gap-0 2xl:w-100">
 				<div class="flex max-w-160 flex-col gap-6">
-					<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">Hello !</h2>
+					<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">{t.about.helloTitle}</h2>
 					<p class="max-w-160 leading-[105%] xl:max-w-none">
-						Moi c'est Mattéo et j’ai 22 ans. Je suis un designer pluridisciplinaire en quête de
-						nouveaux moyens et techniques pour exprimer ma créativité. à travers le graphisme, le
-						webdesign, la 3D, ou le motion design, je conçois des projets à l’allure d’expériences.
+						{t.about.helloParagraph1}
 					</p>
 					<p class="max-w-160 leading-[105%] xl:max-w-none">
-						Je suis convaincu que l’essence même de la création réside dans son processus et qu’il
-						faut traiter chaque étape avec le respect et le soin qu’elle mérite.
+						{t.about.helloParagraph2}
 					</p>
 				</div>
 				<div class="flex max-w-160 flex-col gap-6">
@@ -188,7 +188,7 @@
 						rel="noopener noreferrer"
 						class="self-start text-base leading-[105%] font-medium uppercase md:text-xl"
 					>
-						Télécharger mon CV
+						{t.about.downloadCv}
 					</a>
 				</div>
 			</div>
@@ -197,13 +197,12 @@
 
 	<div class="flex flex-col gap-8 pb-16">
 		<hr class="border-theme-black" />
-		<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">Bibliothèque d'inspirations</h2>
+		<h2 class="text-2xl xl:text-3.5xl leading-[105%] font-medium uppercase">{t.about.libraryTitle}</h2>
 
 		<div class="flex flex-col gap-10 xl:flex-row xl:items-center xl:gap-16">
 			<div class="flex flex-col gap-4 xl:w-80 xl:shrink-0">
 				<p class="leading-[105%]">
-					Ces livres se trouvent aujourd'hui dans ma bibliothèque et ont grandement contribué à
-					m'inspirer visuellement au fil des années.
+					{t.about.libraryText}
 				</p>
 			</div>
 
@@ -228,7 +227,7 @@
 				</div>
 				<div class="flex h-16 flex-col items-center justify-center overflow-hidden text-center md:h-20">
 					<p class="text-xl leading-[105%] font-medium uppercase">{books[centerBookIndex].title}</p>
-					<p class="leading-[105%] opacity-70">{books[centerBookIndex].category}</p>
+					<p class="leading-[105%] opacity-70">{t.about.bookCategories[books[centerBookIndex].categoryKey]}</p>
 				</div>
 			</div>
 		</div>

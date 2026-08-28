@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { localizedHref } from '$lib/i18n';
+	import { localizedHref, localizeProject } from '$lib/i18n';
 	import { projects } from '$lib/data/projects';
 
-	const projectList = Object.values(projects).sort((a, b) => Number(a.id) - Number(b.id));
+	const lang = $derived(page.params.lang as 'fr' | 'en');
+
+	const projectListRaw = Object.values(projects).sort((a, b) => Number(a.id) - Number(b.id));
+	const projectList = $derived(projectListRaw.map((p) => localizeProject(p, lang)));
 
 	let hoveredCover: string | null = $state(null);
 	let mouseX = $state(0);
@@ -17,24 +20,26 @@
 
 <svelte:window onmousemove={handleMouseMove} />
 
-<div class="mx-8 flex h-full min-h-0 flex-1 flex-col gap-10 overflow-hidden">
+<div class="px-6 pb-6 pt-8 flex h-full min-h-0 flex-1 flex-col gap-10 overflow-hidden">
 	<div class="flex flex-col gap-6">
 		<div class="flex items-baseline gap-2 xl:gap-4">
 			<h1 class="flex font-diolce text-4.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
 				Projets
 			</h1>
 		</div>
+		<!--
 		<div class="flex gap-2">
-			<a href={localizedHref(page.params.lang, '/')} class="text-xs leading-[105%] xl:text-[1rem]">Accueil</a>
+			<a href={localizedHref(lang, '/')} class="text-xs leading-[105%] xl:text-[1rem]">Accueil</a>
 			<span class="text-xs leading-[105%] xl:text-[1rem]">&#62;</span>
 			<span class="text-xs leading-[105%] xl:text-[1rem]">Projets</span>
 		</div>
+		-->
 	</div>
 
 	<div class="flex min-h-0 flex-1 flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
 		{#each projectList as project, i (project.id)}
 			<a
-				href={localizedHref(page.params.lang, `/projects/${project.slug}`)}
+				href={localizedHref(lang, `/projects/${project.slug}`)}
 				onmouseenter={() => (hoveredCover = project.cover)}
 				onmouseleave={() => (hoveredCover = null)}
 				class="group flex items-center justify-between border-t border-theme-black py-6 text-theme-black last:border-b"

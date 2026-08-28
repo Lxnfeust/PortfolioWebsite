@@ -1,34 +1,55 @@
 {
 	"id": "8",
 	"slug": "domaine-giscours",
+
+	"noindex": true,
+
 	"year": "2026",
-	"name": "Giscours",
-	"cover": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-	"title": "PAGE en cours de construction.",
-	"description": "S’il-vous-plaît, revenez plus tard.",
+	"name": { "fr": "Giscours", "en": "Giscours" },
+	"cover": "/images/pr_domaine_giscours/cover_domaine_giscours.png",
+	"title": {
+		"fr": "Explorer l'histoire du Château Giscours",
+		"en": "Exploring the history of Château Giscours"
+	},
+	"description": {
+		"fr": "Au sein de mon alternance chez Favoreat Design, j'ai été missionné pour réaliser entièrement la partie visualisation 3D de la vidéo de présentation du Château. Cette vidéo, à but explicatif, sert à présenter les différents aspects qui façonnent son histoire. En partant de la région entière jusqu'à la composition des sols, j'ai dû mettre à profit mes compétences en animation 3D et motion design pour assurer un message et des informations claires.",
+		"en": "As part of my work placement at Favoreat Design, I was tasked with creating the entire 3D visualisation for the Château's presentation video. This explanatory video presents the various aspects that shape its history, from the wider region down to the composition of the soil, and required me to draw on my 3D animation and motion design skills to keep the message and information clear."
+	},
 	"presentation_image": {
-		"src": "/images/pr_domaine_giscours/cover_domaine_giscours.jpg",
-		"alt": "Image de présentation du projet Giscours"
+		"src": "/images/pr_domaine_giscours/cover_domaine_giscours.png",
+		"alt": {
+			"fr": "Image de présentation du projet Giscours",
+			"en": "Presentation image for the Giscours project"
+		}
 	},
 	"project_infos": {
-		"title": "aa",
-		"description": "aa",
-		"links": [
-			{
-				"url": "",
-				"text": "aa",
-				"target": ""
-			}
-		]
+		"title": { "fr": "Expertise et rythme", "en": "Expertise and pacing" },
+		"description": {
+			"fr": "L'entièreté des visuels 3D a été réalisée avec le logiciel C4D. Pour les animations, la plupart ont été faites directement dans le logiciel, tandis que pour d'autres j'ai pris le relais en motion design 2D avec After Effects. Pour réaliser au mieux cette vidéo, j'ai dû caler mon rythme sur une voix de narration afin que les informations dites soient montrées au même moment. J'ai ainsi mené un travail de chorégraphie visuelle, calant chaque mouvement de caméra et chaque transition sur le tempo de la voix off.",
+			"en": "All the 3D visuals were created using Cinema 4D. Most of the animations were made directly within the software, while others were handled through 2D motion design in After Effects. To get the video just right, I had to sync my pacing to a voice-over narration so the information shown matched what was being said. This meant working through a genuine visual choreography, timing every camera move and every transition to the rhythm of the voice-over."
+		},
+		"links": []
 	},
 	"poster": {
 		"src": "",
 		"alt": ""
 	},
 	"images": [
-		{ "src": "", "alt": "" },
-		{ "src": "", "alt": "" },
-		{ "src": "", "alt": "" },
-		{ "src": "", "alt": "" }
+		{
+			"src": "/images/pr_domaine_giscours/image1_domaine_giscours.png",
+			"alt": { "fr": "Image 1 du projet Giscours", "en": "Image 1 of the Giscours project" }
+		},
+		{
+			"src": "/images/pr_domaine_giscours/video1_domaine_giscours.mp4",
+			"alt": { "fr": "Vidéo 1 du projet Giscours", "en": "Video 1 of the Giscours project" }
+		},
+		{
+			"src": "/images/pr_domaine_giscours/video2_domaine_giscours.mp4",
+			"alt": { "fr": "Vidéo 2 du projet Giscours", "en": "Video 2 of the Giscours project" }
+		},
+		{
+			"src": "/images/pr_domaine_giscours/image2_domaine_giscours.png",
+			"alt": { "fr": "Image 2 du projet Giscours", "en": "Image 2 of the Giscours project" }
+		}
 	]
 }

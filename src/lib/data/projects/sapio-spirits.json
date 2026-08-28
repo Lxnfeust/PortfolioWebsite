@@ -1,34 +1,64 @@
 {
 	"id": "7",
 	"slug": "sapio-spirits",
+
+	"noindex": true,
+
 	"year": "2026",
-	"name": "Sapio spirits",
+	"name": { "fr": "Sapio spirits", "en": "Sapio Spirits" },
 	"cover": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-	"title": "L’étoile montante des spiritueux français",
-	"description": "Dans le cadre de mon alternance chez Favoreat Design, j’ai pu réaliser, suite à une refont graphique, une présentation de la marque Sapio. Entouré et aidé par mes collègues, j’ai mené à bien la demande et posé les bases des systèmes visuels et graphiques de la marque sur ses supports de communication.",
+	"title": {
+		"fr": "l'étoile montante des spiritueux français",
+		"en": "the rising star of French spirits"
+	},
+	"description": {
+		"fr": "Dans le cadre de mon alternance chez Favoreat Design, j'ai pu réaliser, suite à une refonte graphique de la marque, les premiers jets de déclinaison de cette nouvelle identité sur différents supports. Entouré et aidé par mes collègues, j'ai mené à bien la demande et posé les bases des systèmes visuels et graphiques propres à certains contextes et formats pour Sapio Spirits.",
+		"en": "As part of my work placement at Favoreat Design, following a graphic rebrand, I created the first rollout drafts of the new identity across various media. Supported by my colleagues, I carried the brief through and laid the groundwork for the visual and graphic systems tailored to specific contexts and formats for Sapio Spirits."
+	},
 	"presentation_image": {
 		"src": "/images/pr_sapio_spirits/cover_sapio_spirits.jpg",
-		"alt": "Image de présentation du projet Sapio spirits"
+		"alt": {
+			"fr": "Image de présentation du projet Sapio spirits",
+			"en": "Presentation image for the Sapio Spirits project"
+		}
 	},
 	"project_infos": {
-		"title": "Réseaux sociaux",
-		"description": "Par la suite j’ai également réalisé quelques posts en Motion Design pour leur Instagram. Certains sont des templates réemployables tout au long de l’année tandis que d’autres sont ponctuels.",
+		"title": { "fr": "Les supports", "en": "The materials" },
+		"description": {
+			"fr": "J'ai d'abord commencé par un dossier de présentation de la marque, encore utilisé aujourd'hui, sur lequel les premières dispositions voyaient le jour. Par la suite, j'ai également réalisé quelques posts en motion design pour leur Instagram afin de dynamiser la page au moment du lancement de cette nouvelle identité.",
+			"en": "I started by putting together a brand presentation document, still in use today, in which the first layout directions took shape. I then also created a few motion design posts for their Instagram to energise the page around the launch of this new identity."
+		},
 		"links": [
 			{
-				"url": "",
-				"text": "Instagram",
-				"target": ""
+				"url": "https://www.instagram.com/sapio.spirits/",
+				"text": { "fr": "Instagram", "en": "Instagram" },
+				"target": "_blank"
 			}
 		]
 	},
 	"poster": {
 		"src": "/images/pr_sapio_spirits/prez_sapio_spirits.mp4",
-		"alt": "Présentation vidéo du projet Sapio Spirits"
+		"alt": {
+			"fr": "Présentation vidéo du projet Sapio Spirits",
+			"en": "Video presentation of the Sapio Spirits project"
+		}
 	},
 	"images": [
-		{ "src": "/images/pr_sapio_spirits/social1_sapio_spirits.mp4", "alt": "Post réseaux sociaux 1 — Sapio Spirits" },
-		{ "src": "/images/pr_sapio_spirits/social2_sapio_spirits.mp4", "alt": "Post réseaux sociaux 2 — Sapio Spirits" },
-		{ "src": "/images/pr_sapio_spirits/social3_sapio_spirits.mp4", "alt": "Post réseaux sociaux 3 — Sapio Spirits" },
-		{ "src": "/images/pr_sapio_spirits/social4_sapio_spirits.mp4", "alt": "Post réseaux sociaux 4 — Sapio Spirits" }
+		{
+			"src": "/images/pr_sapio_spirits/social1_sapio_spirits.mp4",
+			"alt": { "fr": "Post réseaux sociaux 1 — Sapio Spirits", "en": "Social media post 1 — Sapio Spirits" }
+		},
+		{
+			"src": "/images/pr_sapio_spirits/social2_sapio_spirits.mp4",
+			"alt": { "fr": "Post réseaux sociaux 2 — Sapio Spirits", "en": "Social media post 2 — Sapio Spirits" }
+		},
+		{
+			"src": "/images/pr_sapio_spirits/social3_sapio_spirits.mp4",
+			"alt": { "fr": "Post réseaux sociaux 3 — Sapio Spirits", "en": "Social media post 3 — Sapio Spirits" }
+		},
+		{
+			"src": "/images/pr_sapio_spirits/social4_sapio_spirits.mp4",
+			"alt": { "fr": "Post réseaux sociaux 4 — Sapio Spirits", "en": "Social media post 4 — Sapio Spirits" }
+		}
 	]
 }

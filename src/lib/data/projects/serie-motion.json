@@ -2,28 +2,55 @@
 	"id": "4",
 	"slug": "serie-motion",
 	"year": "2024",
-	"name": "Série motion",
+	"name": { "fr": "Série motion", "en": "Motion Series" },
 	"cover": "/images/pr_serie_motion/cover_serie_motion.jpg",
 	"coverMobile": "/images/pr_serie_motion/cover_mobile_serie_motion.jpg",
-	"title": "une série de visuels en motion design.",
-	"description": "Une série de visuels courts réalisés sur le logiciel Cavalry. J’ai choisi pour ce projet de refléter l’ambiance et mon ressenti à l’écoute de la discographie d’un artiste que j’affectionne : 1000 Eyes.",
+	"title": {
+		"fr": "une série de visuels en motion design.",
+		"en": "a series of motion design visuals."
+	},
+	"description": {
+		"fr": "Une série de visuels courts réalisés sur le logiciel Cavalry. J’ai choisi pour ce projet de refléter l’ambiance et mon ressenti à l’écoute de la discographie d’un artiste que j’affectionne : 1000 Eyes.",
+		"en": "A series of short visuals created using Cavalry. For this project, I chose to reflect the mood and feeling I get from listening to the discography of an artist I love: 1000 Eyes."
+	},
 	"presentation_image": {
 		"src": "/images/pr_serie_motion/cover_serie_motion.jpg",
-		"alt": "Image de présentation du projet Série motion"
+		"alt": {
+			"fr": "Image de présentation du projet Série motion",
+			"en": "Presentation image for the Motion Series project"
+		}
 	},
 	"project_infos": {
-		"title": "Le motion design paramétrique : ",
-		"description": "En choisissant de travailler sur le logiciel Cavalry pour cette série de visuels en motion design, j’ai pu m’éloigner grandement et facilement de la logique des visuels réalisés sur un logiciel comme After Effects par exemple. Cavalry permet de faire plus simplement et sans plug-in des animations et compositions facilement contrôlables & adaptables.",
+		"title": { "fr": "Le motion design paramétrique : ", "en": "Parametric motion design: " },
+		"description": {
+			"fr": "En choisissant de travailler sur le logiciel Cavalry pour cette série de visuels en motion design, j’ai pu m’éloigner grandement et facilement de la logique des visuels réalisés sur un logiciel comme After Effects par exemple. Cavalry permet de faire plus simplement et sans plug-in des animations et compositions facilement contrôlables & adaptables.",
+			"en": "By choosing to work in Cavalry for this series of motion design visuals, I was able to move well away from the logic of visuals made in a tool like After Effects, for example. Cavalry makes it easier, and without any plug-ins, to create animations and compositions that are simple to control and adapt."
+		},
 		"links": []
 	},
 	"poster": {
 		"src": "/images/pr_serie_motion/kv_serie_motion.mp4",
-		"alt": "Compilation vidéo des 4 rendus pour le projet Série motion"
+		"alt": {
+			"fr": "Compilation vidéo des 4 rendus pour le projet Série motion",
+			"en": "Video compilation of the 4 renders for the Motion Series project"
+		}
 	},
 	"images": [
-		{ "src": "/images/pr_serie_motion/image1_serie_motion.jpg", "alt": "Image 1 du projet Série motion" },
-		{ "src": "/images/pr_serie_motion/video1_serie_motion.mp4", "alt": "Vidéo 1 — Série motion" },
-		{ "src": "/images/pr_serie_motion/video2_serie_motion.mp4", "alt": "Vidéo 2 — Série motion" },
-		{ "src": "/images/pr_serie_motion/image4_serie_motion.jpg", "alt": "Image 4 du projet Série motion" }
+		{
+			"src": "/images/pr_serie_motion/image1_serie_motion.jpg",
+			"alt": { "fr": "Image 1 du projet Série motion", "en": "Image 1 of the Motion Series project" }
+		},
+		{
+			"src": "/images/pr_serie_motion/video1_serie_motion.mp4",
+			"alt": { "fr": "Vidéo 1 — Série motion", "en": "Video 1 — Motion Series" }
+		},
+		{
+			"src": "/images/pr_serie_motion/video2_serie_motion.mp4",
+			"alt": { "fr": "Vidéo 2 — Série motion", "en": "Video 2 — Motion Series" }
+		},
+		{
+			"src": "/images/pr_serie_motion/image4_serie_motion.jpg",
+			"alt": { "fr": "Image 4 du projet Série motion", "en": "Image 4 of the Motion Series project" }
+		}
 	]
 }

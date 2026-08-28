@@ -2,30 +2,50 @@
 	"id": "5",
 	"slug": "valeria",
 	"year": "2024",
-	"name": "Valeria",
+	"name": { "fr": "Valeria", "en": "Valeria" },
 	"cover": "/images/pr_valeria/cover_valeria.jpg",
-	"title": "Valeria, une expérience immersive en VR.",
-	"description": "Les différents conflits qui déchirent notre monde font sombrer certaines personnes courageuses dans l'oubli. Pour essayer d’y remédier, nous avons conçu une expérience interactive qui mélange 3D et Réalité Virtuelle. Nous avons voulu raconter l'histoire d'une réfugiée Ukrainienne (à travers son témoignage) qui a du fuir son pays à cause de la guerre.",
+	"title": {
+		"fr": "Valeria, une expérience immersive en VR.",
+		"en": "Valeria, an immersive VR experience."
+	},
+	"description": {
+		"fr": "Les différents conflits qui déchirent notre monde font sombrer certaines personnes courageuses dans l'oubli. Pour essayer d’y remédier, nous avons conçu une expérience interactive qui mélange 3D et Réalité Virtuelle. Nous avons voulu raconter l'histoire d'une réfugiée Ukrainienne (à travers son témoignage) qui a du fuir son pays à cause de la guerre.",
+		"en": "The various conflicts tearing our world apart cause many courageous people to fade into oblivion. To try to address this, we designed an interactive experience blending 3D and virtual reality. We wanted to tell the story of a Ukrainian refugee — through her own testimony — who had to flee her country because of the war."
+	},
 	"presentation_image": {
 		"src": "/images/pr_valeria/cover_valeria.jpg",
-		"alt": "Image de présentation du projet Valeria"
+		"alt": { "fr": "Image de présentation du projet Valeria", "en": "Presentation image for the Valeria project" }
 	},
 	"project_infos": {
-		"title": "L’envers du décor :",
-		"description": "Pendant ce projet, j'ai pu réaliser l'ensemble des 4 scènes en 3D sur Blender qui constituent les 4 chapitres de l’histoire. Elles ont été modélisées de telle manière à ce que chaque personne qui puisse tester l’expérience se retrouve immergée dans la narration.",
+		"title": { "fr": "L’envers du décor :", "en": "Behind the scenes:" },
+		"description": {
+			"fr": "Pendant ce projet, j'ai pu réaliser l'ensemble des 4 scènes en 3D sur Blender qui constituent les 4 chapitres de l’histoire. Elles ont été modélisées de telle manière à ce que chaque personne qui puisse tester l’expérience se retrouve immergée dans la narration.",
+			"en": "During this project, I created all 4 of the 3D scenes in Blender that make up the story's 4 chapters. They were modelled in a way that fully immerses anyone trying the experience in the narrative."
+		},
 		"links": [
 			{
-				"url": "",
-				"text": "Vidéo",
-				"target": ""
+				"url": "https://youtu.be/hGxWL3LEYq8",
+				"text": { "fr": "Vidéo", "en": "Video" },
+				"target": "_blank"
 			}
 		]
 	},
-	
 	"images": [
-		{ "src": "/images/pr_valeria/image1_valeria.png", "alt": "Image 1 du projet Valeria" },
-		{ "src": "/images/pr_valeria/image2_valeria.png", "alt": "Image 2 du projet Valeria" },
-		{ "src": "/images/pr_valeria/image3_valeria.png", "alt": "Image 3 du projet Valeria" },
-		{ "src": "/images/pr_valeria/image4_valeria.png", "alt": "Image 4 du projet Valeria" }
+		{
+			"src": "/images/pr_valeria/image1_valeria.png",
+			"alt": { "fr": "Image 1 du projet Valeria", "en": "Image 1 of the Valeria project" }
+		},
+		{
+			"src": "/images/pr_valeria/image2_valeria.png",
+			"alt": { "fr": "Image 2 du projet Valeria", "en": "Image 2 of the Valeria project" }
+		},
+		{
+			"src": "/images/pr_valeria/image3_valeria.png",
+			"alt": { "fr": "Image 3 du projet Valeria", "en": "Image 3 of the Valeria project" }
+		},
+		{
+			"src": "/images/pr_valeria/image4_valeria.png",
+			"alt": { "fr": "Image 4 du projet Valeria", "en": "Image 4 of the Valeria project" }
+		}
 	]
 }

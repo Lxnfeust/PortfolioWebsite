@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { localizedHref } from '$lib/i18n';
+	import { localizedHref, dictionaries } from '$lib/i18n';
 
 	let { showMenu = $bindable() } = $props();
 
+	const lang = $derived((page.params.lang as 'fr' | 'en' | undefined) ?? 'fr');
+	const t = $derived(dictionaries[lang]);
+
 	const navItems = [
-		{ name: 'Accueil', path: '/' },
-		{ name: 'Projets', path: '/projects' },
-		{ name: 'Laboratoire', path: '/laboratory' },
-		{ name: 'À propos de moi', path: '/about-me' }
+		{ key: 'home' as const, path: '/' },
+		{ key: 'projects' as const, path: '/projects' },
+		{ key: 'laboratory' as const, path: '/playground' },
+		{ key: 'aboutMe' as const, path: '/about-me' }
 	];
 </script>
 
@@ -19,11 +22,11 @@
 	<button
 		onclick={() => (showMenu = !showMenu)}
 		class="cursor-pointer self-end text-base xl:text-xl leading-[105%] font-medium uppercase"
-		>Fermer</button
+		>{t.menu.close}</button
 	>
 	<div class="flex justify-between border-y border-theme-black py-4">
-		<span class="leading-[105%] font-bold uppercase text-base xl:text-xl">Mattéo</span>
-		<span class="leading-[105%] font-bold uppercase text-base xl:text-xl">Lambert</span>
+		<span class="leading-[105%] font-medium uppercase text-base xl:text-xl">Mattéo</span>
+		<span class="leading-[105%] font-medium uppercase text-base xl:text-xl">Lambert</span>
 	</div>
 	<div class="flex flex-col gap-16">
 		<nav>
@@ -31,12 +34,12 @@
 				{#each navItems as navItem, i (i)}
 					<li>
 						<a
-							href={localizedHref(page.params.lang as 'fr' | 'en', navItem.path)}
+							href={localizedHref(lang, navItem.path)}
 							onclick={() => (showMenu = false)}
 							class="flex items-end gap-2"
 						>
-							<span class="translate-x-0 font-diolce text-[2.25rem] leading-[85%] uppercase italic transition duration-400 hover:translate-x-2 md:text-4.5xl"
-								>{navItem.name}</span
+							<span class="translate-x-0 font-diolce text-[2.25rem] leading-[85%] uppercase transition duration-400 hover:translate-x-2 md:text-4.5xl"
+								>{t.nav[navItem.key]}</span
 							>
 						</a>
 					</li>
@@ -44,21 +47,21 @@
 			</ul>
 		</nav>
 		<div class="flex flex-col gap-6">
-			<p class="leading-[105%] font-bold">
-				Disons simplement qu’un beau jour, j’ai pris la décision d’ouvrir Photoshop, et voilà où
-				j’en suis aujourd’hui. Bonjour, moi c’est Mattéo, et voici mon portfolio.
+			<p class="leading-[105%] font-medium">
+				{t.menu.bioParagraph1}
 			</p>
-			<p class="leading-[105%]">
-				Mon histoire est bien évidemment remplie de beaucoup plus de détails incroyables. <br />
-				Si vous êtes curieux.se, je serais ravi de pouvoir en discuter avec vous :)
-			</p>
+			<p class="leading-[105%]">{t.menu.bioParagraph2}</p>
 		</div>
 	</div>
 	<div class="flex justify-between border-y border-theme-black py-4">
-		<span class="leading-[105%] font-bold uppercase">Mail</span>
-		<span class="leading-[105%] font-bold uppercase">CV</span>
+		<span class="text-base leading-[105%] font-medium uppercase md:text-xl">{t.menu.mail}</span>
+		<a
+			href={`/assets/CV_MatteoLambert_${lang.toUpperCase()}.pdf`}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="cursor-pointer text-base leading-[105%] font-medium uppercase md:text-xl"
+		>
+			{t.menu.cv}
+		</a>
 	</div>
-
-	
 </div>
-
