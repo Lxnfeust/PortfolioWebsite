@@ -77,7 +77,7 @@
 	}
 </script>
 
-<div class="container_home px-6 pb-6 pt-8 gap-50 md:gap-60 xl:gap-80">
+<div id="top" class="container_home px-6 pb-6 pt-8 gap-50 md:gap-60 xl:gap-80">
 	<!-- HERO -->
 	<div class="flex flex-col items-center text-center">
 		<h1 class="font-diolce text-4.5xl leading-[85%] uppercase md:text-5xl xl:text-7.5xl">
@@ -243,6 +243,8 @@
 		href="#top"
 		onclick={(e) => {
 			e.preventDefault();
+			document.body.scrollTo({ top: 0, behavior: 'smooth' });
+			document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}}
 		class="flex justify-center border-y py-4 text-base leading-[105%] font-medium uppercase text-[1rem] md:text-xl"

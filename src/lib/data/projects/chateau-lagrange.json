@@ -36,6 +36,11 @@
 				"url": "https://chateau-lagrange.com/wp-content/uploads/2025/11/chateau-lagrange-collection-heritage-fr.pdf",
 				"text": { "fr": "La brochure", "en": "The brochure" },
 				"target": "_blank"
+			},
+			{
+				"url": "https://chateau-lagrange.com/collection-heritage/",
+				"text": { "fr": "Site", "en": "Website" },
+				"target": "_blank"
 			}
 		]
 	},

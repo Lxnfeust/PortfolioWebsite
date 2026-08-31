@@ -54,7 +54,16 @@
 		</div>
 	</div>
 	<div class="flex justify-between border-y border-theme-black py-4">
-		<span class="text-base leading-[105%] font-medium uppercase md:text-xl">{t.menu.mail}</span>
+		<button
+			type="button"
+			onclick={() => {
+				const parts = ['matteolambert82', 'gmail.com'];
+				window.location.href = 'mailto:' + parts.join('@');
+			}}
+			class="cursor-pointer text-base leading-[105%] font-medium uppercase md:text-xl"
+		>
+			{t.menu.mail}
+		</button>
 		<a
 			href={`/assets/CV_MatteoLambert_${lang.toUpperCase()}.pdf`}
 			target="_blank"
